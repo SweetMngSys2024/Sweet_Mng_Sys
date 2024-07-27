@@ -11,8 +11,10 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
     plugin = {"summary", "html:target/cucumber/report.html"},
     monochrome = true,
     snippets = SnippetType.CAMELCASE,				
-    glue = "testDefinitions" )
-
+    glue = "testDefinitions"
+   //, tags="@specificTag" 
+   
+    )
 
 public class AcceptanceTest {
 
