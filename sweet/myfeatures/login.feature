@@ -26,6 +26,6 @@ Feature: User login sweet
     Then an error message should appear "<error_message>"
 
     Examples:
-      | username | password | role | error_message                 |
-      |          | password | User | please enter your username     |
-      | username |          | User | please enter your password     |
+      | username | password | role | error_message                  |
+      |          | password | User | please enter your username !   |
+      | username |          | User | please enter your password     | 

@@ -2,7 +2,7 @@ package MyApp2024_Sweet;
 
 public class User {
 
-	 String username;
+	String username;
     String password;
     String role;
     
