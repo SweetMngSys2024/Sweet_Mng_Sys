@@ -13,7 +13,7 @@ Feature: User login sweet
       | aya        | password789  | Admin     | logged_in               |
       | aya        | Wrong789     | Admin     | failed_login_password   |
       | wrongaya   | password789  | Admin     | failed_login_username   |
-      | shams      | password654  | Owner     | logged_in               |
+      | shams      | password654  | Owner     | logged_in               | 
       | shams      | Wrong654     | Owner     | failed_login_password   |
       | wrongshams | password654  | Owner     | failed_login_username   |
       | rama       | password675  | Suppliers | logged_in               |
