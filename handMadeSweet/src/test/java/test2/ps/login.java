@@ -19,7 +19,7 @@ public class login {
 	@Given("user is not in the sweet system")
 	public void userIsNotInTheSweetSystem() {
 		   assertFalse(sweetApp.currentUser.isLoggedIn);
-	}
+	} 
 
 	@When("user logs in with username {string} and password {string} and role {string} logs in")
 	public void userLogsInWithUsernameAndPasswordAndRoleLogsIn(String password, String username, String role) {

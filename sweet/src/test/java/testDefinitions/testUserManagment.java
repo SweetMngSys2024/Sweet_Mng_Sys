@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import MyApp2024_Sweet.ClassMy_App;
-import MyApp2024_Sweet.RawMaterial;
 import MyApp2024_Sweet.Store;
 import MyApp2024_Sweet.User;
+import Sweet.App.RawMaterial;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

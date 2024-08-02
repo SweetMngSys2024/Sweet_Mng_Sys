@@ -18,7 +18,7 @@ public class userRecipe {
 		newRecipe=new Recipe();
 		
 	}
-	 
+	
 
 @When("the user enter {string} in title field")
 public void theUserEnterInTitleField(String newtitle) {

@@ -21,7 +21,7 @@ public class signup {
 	public void userEnterInTheFirstNameField(String fName ) {
 		boolean fNameFlag = sweetApp.currentUser.checkFirstName(fName);
 		if(fNameFlag==true)assertTrue("check first name failed", fNameFlag);
-	 	else assertFalse("check first name passed", fNameFlag);
+		else assertFalse("check first name passed", fNameFlag);
 		
 		
 	}

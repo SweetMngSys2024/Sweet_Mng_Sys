@@ -2,6 +2,8 @@ package MyApp2024_Sweet;
 
 import java.util.ArrayList;
 
+import Sweet.App.RawMaterial;
+
 public class ClassMy_App {
 	public static ArrayList<User> list_users = new ArrayList<>();
 	public static ArrayList<Store> list_stores = new ArrayList<>();

@@ -11,7 +11,7 @@ public class Recipe {
 	public String userName;
 	public String ingrediants;
 	public String time;
-	 
+	
 	
 	public int userNameFlag=0;
 	

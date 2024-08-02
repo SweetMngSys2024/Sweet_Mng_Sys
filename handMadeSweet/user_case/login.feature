@@ -20,7 +20,7 @@ Feature: User login sweet
       | rama       | Wrong675     | Suppliers | failed_login_password   |
       | wrongrama  | password675  | Suppliers | failed_login_username   |
       
-  Scenario Outline: User left username or password field blank
+  Scenario Outline: User left username or password field blank 
     Given user is not in the sweet system 
     When user logs in with username "<username>" and password "<password>" and role "<role>" logs in
     Then an error message should appear "<error_message>"

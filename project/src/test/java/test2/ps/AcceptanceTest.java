@@ -8,7 +8,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 @RunWith (Cucumber.class)
 @CucumberOptions(
 		features="user_case",
-		plugin= {"summary","html:C:/Users/ThinkPad/git/repository/handMadeSweet/target/cucumber/report.html"},
+		plugin= {"summary","html:C:\\Users\\ThinkPad\\eclipse-workspace\\project\\target/cucumber/report.html"},
 		monochrome=true,
 		snippets=SnippetType.CAMELCASE,
 		glue="test2.ps"

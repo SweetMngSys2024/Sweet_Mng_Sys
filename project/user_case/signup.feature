@@ -19,7 +19,7 @@ Feature: Sign up information
     And  user enter "shams123@aziz.com" in the email field
     Then  an error message should appear "please enter your first name"
 
-     
+    
    Scenario: User left last name field blank
     When user enter "shams" in the first name field
     And  user enter "" in the last name field
