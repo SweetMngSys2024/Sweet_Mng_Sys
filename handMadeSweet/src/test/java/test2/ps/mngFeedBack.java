@@ -5,9 +5,9 @@ import static org.junit.Assert.assertFalse;
 import Sweet.App.MyApp;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
+ 
 public class mngFeedBack {
-	MyApp sweetApp;
+	MyApp sweetApp; 
 	
 
 	public mngFeedBack(MyApp sweetApp) {

@@ -7,7 +7,7 @@ import Sweet.App.MyApp;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class filterRecipe {
+public class filterRecipe { 
 	
 	MyApp sweetApp;
 	String filterOption;

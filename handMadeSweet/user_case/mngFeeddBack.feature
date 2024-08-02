@@ -1,7 +1,7 @@
 Feature: The Admin view and delete feedback
 
   Scenario: View feedback information
-    Given The user role is "Admin"
+    Given The user role is "Admin" 
     When the Admin is logged in  
     Then the Admin can see all feedback
 

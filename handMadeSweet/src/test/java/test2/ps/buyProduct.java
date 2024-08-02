@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 
 public class buyProduct {
 
-	MyApp sweetApp;
+	MyApp sweetApp; 
 
 
 	public buyProduct(MyApp sweetApp) {

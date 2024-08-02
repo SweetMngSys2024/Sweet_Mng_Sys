@@ -2,7 +2,7 @@ package Sweet.App;
 
 public class RawMaterial {
 
-    private String materialName;
+    private String materialName; 
     private String supplierUsername;
     private double price; 
 

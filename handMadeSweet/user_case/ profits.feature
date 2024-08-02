@@ -1,7 +1,7 @@
 Feature: Monitor profits and generate financial reports.
 
 
- Scenario: Admin views total profits for a specific city      
+ Scenario: Admin views total profits for a specific city       
    Given The user role is "Admin"
    When  the Admin is logged in  
    And selects the "City Profit Report" option

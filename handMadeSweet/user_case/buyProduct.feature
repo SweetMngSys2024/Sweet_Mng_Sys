@@ -1,5 +1,5 @@
 Feature: Buy a product
-
+ 
   Scenario: Search for some product with valid input in search field
     When user enter "" in search field
     Then error msg will appear "please write something to search!"

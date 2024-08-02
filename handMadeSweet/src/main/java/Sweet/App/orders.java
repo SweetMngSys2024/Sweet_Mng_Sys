@@ -1,7 +1,7 @@
 
 package Sweet.App;
 
-public class orders {
+public class orders { 
 
     private String productName;
     private int quantity;

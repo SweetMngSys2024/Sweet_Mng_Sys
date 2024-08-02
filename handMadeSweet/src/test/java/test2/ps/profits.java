@@ -3,7 +3,7 @@ package test2.ps;
 import Sweet.App.MyApp;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-
+ 
 public class profits {
 	MyApp sweetApp;
 	

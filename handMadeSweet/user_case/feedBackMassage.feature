@@ -1,5 +1,5 @@
 Feature: Send a feedback or massage 
- 
+  
 
   Scenario: User wants to set a feedback with vaild inputs
     When user write "Recipe" in type field

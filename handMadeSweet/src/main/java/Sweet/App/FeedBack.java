@@ -1,6 +1,6 @@
 package Sweet.App;
 import java.util.ArrayList;
-public class FeedBack {
+public class FeedBack { 
 
 	private String uNameSrc;
 	private String mgs;

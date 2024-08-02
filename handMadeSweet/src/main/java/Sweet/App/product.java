@@ -1,7 +1,7 @@
 package Sweet.App;
 
 public class product {
-	 
+	  
 	 private String pName;
 	 private String description;
 	 private double price;

@@ -1,6 +1,6 @@
 package Sweet.App;
 
-public class Massage {
+public class Massage { 
 
 	private String uNameSrc;
 	private String uNameDest;

@@ -1,6 +1,6 @@
 
 Feature: Search for a recipe
-
+ 
  
    Scenario: search for specific recipe
     When user enter "Chocolate Cake" in the search filed

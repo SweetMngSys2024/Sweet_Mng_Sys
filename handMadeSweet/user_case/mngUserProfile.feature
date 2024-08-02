@@ -1,7 +1,7 @@
 
 Feature: manage user account
 
-  Scenario: View user profile information
+  Scenario: View user profile information 
     Given that the user role is "User"
     When  the user is logged in
     Then the user can see his information 

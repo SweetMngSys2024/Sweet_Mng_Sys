@@ -1,5 +1,5 @@
 Feature: User login sweet
-
+ 
   Scenario Outline: Login with different credentials
     Given user is not in the sweet system
     When user logs in with username "<username>" and password "<password>" and role "<role>" logs in

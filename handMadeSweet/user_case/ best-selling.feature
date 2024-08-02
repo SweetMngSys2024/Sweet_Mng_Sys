@@ -1,5 +1,5 @@
 Feature: Best-selling products
-
+ 
  Scenario: Best-selling products in each store
 Given The user role is "Admin"
    When  the Admin is logged in  

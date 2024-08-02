@@ -1,7 +1,7 @@
 Feature: Gather and display statistics on registered users by City
 
 Scenario: Count the number of registered users in each city
-   Given The user role is "Admin"
+   Given The user role is "Admin" 
    When  the Admin is logged in 
    And selects the "User Registration in City" option
      And Admin enter "Nablus" in the city field
