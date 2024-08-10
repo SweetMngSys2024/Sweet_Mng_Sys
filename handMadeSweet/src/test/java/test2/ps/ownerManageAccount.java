@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 
 public class ownerManageAccount {
 
-	
+	 
 	MyApp sweetApp;
 	
 	
@@ -29,7 +29,7 @@ public class ownerManageAccount {
 			assertTrue("Try another user name!",sweetApp.currentUser.checkUserName(userName));
 		else assertFalse("the user name is good!",sweetApp.currentUser.checkUserName(userName));
 
-	}
+	} 
 
 	@When("the Owner enter {string} in password field")
 	public void theOwnerEnterInPasswordField(String pass) {

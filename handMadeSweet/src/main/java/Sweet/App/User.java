@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
-public class User {
+public class User { 
 
 	public String userName;
 	public String password;
@@ -54,7 +54,8 @@ public class User {
 		this.userName=username2;
 	    this.password=password2;
 		this.role=role2;
-	
+		userSentMsgs=new ArrayList<Massage>();
+		userRecievedMsgs=new ArrayList<Massage>();
 		}
 		
 
@@ -65,10 +66,11 @@ public class User {
 		this.password = password;
 		this.role = role;
 		this.city = city;
+		userSentMsgs=new ArrayList<Massage>();
+		userRecievedMsgs=new ArrayList<Massage>();
 	}
 	
 	
-
 
 	public String getFirstName() {
 		return firstName;
@@ -115,8 +117,28 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	public String getCity() {
+		return city;
+	}
 
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getBranch() {
+		return branch;
+	}
 
+	public void setBranch(String branch) {
+		this.branch = branch;
+	}
+
+	public String getCityOwnerSupplier() {
+		return cityOwnerSupplier;
+	}
+
+	public void setCityOwnerSupplier(String cityOwnerSupplier) {
+		this.cityOwnerSupplier = cityOwnerSupplier;
+	}
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
@@ -149,17 +171,6 @@ public class User {
 	}
 
 
-	public boolean checkPhoneNumber(String phoneNumber2) {
-		if(phoneNumber2.equals("")) {
-			return false;
-			
-		}else 
-		{
-			
-			this.setPhoneNumber(phoneNumber2);
-			return true;
-		}
-	}
 
 	//to check if first name is valid
 	public boolean checkFirstName(String fName) 
@@ -240,21 +251,19 @@ public class User {
 
 	public boolean checkCity(String city2) {
 		if(city2.equals("")) {return false;}
-		else if(city2.equals("Jenin")||city2.equals("Nablus")) {
+		else 
+		{
 			this.setCity(city2);
-			return true;
-		}else {
-            return false;
-        }
-    }
-	
+			return true;}
+	}
+
 	
 	
 	 public boolean checkRoleType(String roleType) {
 	        if (roleType.equals("")) {
 	            return false;
 	            
-	        }else if(roleType.equals("Owner")||roleType.equals("Suppliers")) {
+	        }else if(roleType.equals("Owner")||roleType.equals("Supplier")) {
 	        	this.setRole(roleType);
 	            return true;
 	        } else {
@@ -262,7 +271,6 @@ public class User {
 	        }
 	    }
 	
-
 	 public boolean checkBranch(String Branch) {
 	        if (Branch.equals("")) {
 	            return false;
@@ -275,39 +283,37 @@ public class User {
 	        }
 	    }
 
-
-	
 	 
-	 
+	 public boolean checkCityBranchPosition(String city2) {
+			if(city2.equals("")) {return false;}
+			else if(city2.equals("Jenin")||city2.equals("Nablus")) {
+				this.setCity(city2);
+				return true;
+			}else {
+	            return false;
+	        }
+	    }
+
+
+		public boolean checkPhoneNumber(String phoneNumber2) {
+			if(phoneNumber2.equals("")) {
+				return false;
+				
+			}else 
+			{
+				
+				this.setPhoneNumber(phoneNumber2);
+				return true;
+			}
+		}
 	
-		
-		
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-	public String getBranch() {
-		return branch;
-	}
-
-	public void setBranch(String branch) {
-		this.branch = branch;
-	}
-
-	public String getCityOwnerSupplier() {
-		return cityOwnerSupplier;
-	}
-
-	public void setCityOwnerSupplier(String cityOwnerSupplier) {
-		this.cityOwnerSupplier = cityOwnerSupplier;
-	}
-
-
-
-	}
+}
  
 	
 	
+
+
+
+
+
+

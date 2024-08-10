@@ -6,7 +6,7 @@ Scenario: total sales and profits in branch
   When  The Owner  is logged in   
   And   The "shams_imad" searches for the total sales and profits in the branch it manages
   Then  the system should display the total sales and profits in this branch
-   
+    
    
    
   Scenario: total sales and profits in the branch for a specific product

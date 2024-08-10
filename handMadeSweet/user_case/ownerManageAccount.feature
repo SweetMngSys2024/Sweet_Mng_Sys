@@ -3,10 +3,10 @@ Feature: Manage account and update
 
 
   Scenario: View owner profile information 
-   Given The User role is "Owner" 
+   Given The User role is "Owner"  
    When  The Owner  is logged in  
    Then the Owner can see his information 
-    
+     
 
    Scenario: Edit Owner profile information with valid inputs
    Given The User role is "Owner" 

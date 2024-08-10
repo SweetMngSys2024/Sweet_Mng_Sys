@@ -16,7 +16,7 @@ public class ownerMonetorSalesTest {
 	private String branch;
 	private String productBranchName;
 	private String bestSellingBranchName;
-	
+	 
 	public ownerMonetorSalesTest (MyApp sweetApp) {
 		this.sweetApp = sweetApp;
 	} 
