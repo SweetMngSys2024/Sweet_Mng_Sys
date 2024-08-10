@@ -2,6 +2,7 @@ package Sweet.App;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 public class MyApp {
  
 	 static public ArrayList<User> users = new ArrayList<>();
@@ -38,16 +39,15 @@ public class MyApp {
 		users.add(new User("ahmad", "password456", "User","Nablus"));
 		users.add(new User("aya", "password789", "Admin"));
 		users.add(new User("amer", "password987", "Admin"));
-		users.add(new User("shams", "password654", "Owner","Branch 3","Jenin"));
-		users.add(new User("raghad", "password321", "Owner","Branch 2","Nablus"));
-		users.add(new User("rama", "password675", "Suppliers","Branch 1","Nablus"));
-		users.add(new User("amal", "password184", "Suppliers","Branch 4","Jenin"));
-		
-		
-		users.add(new User("amal_ahmad", "password1234", "Suppliers","Branch 3","Jenin"));
-		users.add(new User("shams_imad", "password5678", "Owner","Branch 1","Nablus"));
-		users.add(new User("raghad_jamal", "password910", "Owner","Branch 4","Jenin"));
-		users.add(new User("rama_hasan", "password11", "Suppliers","Branch 2","Nablus"));
+		users.add(new User("shams","password654", "Owner", "Branch 3", "Jenin", "shams@example.com", "123-456-7890", "Jordan", "1985-02-20"));
+        users.add(new User("raghad", "password321", "Owner", "Branch 2", "Nablus", "raghad@example.com", "234-567-8901", "Palestine", "1987-04-15"));
+        users.add(new User("rama", "password675", "Suppliers", "Branch 1", "Nablus",  "rama@example.com", "345-678-9012", "Jordan", "1990-06-30"));
+        users.add(new User("amal", "password184", "Suppliers", "Branch 4", "Jenin", "amal@example.com", "456-789-0123", "Palestine", "1992-08-25"));
+
+        users.add(new User("amal_ahmad", "password1234", "Suppliers", "Branch 3", "Jenin", "amal_ahmad@example.com", "567-890-1234", "Jordan", "1995-10-15"));
+        users.add(new User("shams_imad", "password5678", "Owner", "Branch 1", "Nablus", "shams_imad@example.com", "678-901-2345", "Palestine", "1986-11-05"));
+        users.add(new User("raghad_jamal", "password910", "Owner", "Branch 4", "Jenin", "raghad_jamal@example.com", "789-012-3456", "Jordan", "1988-12-01"));
+        users.add(new User("rama_hasan", "password11", "Suppliers", "Branch 2", "Nablus", "rama_hasan@example.com", "890-123-4567", "Palestine", "1991-07-20"));
 	        
 		recipes.add(new Recipe("Chocolate Cake", "Delicious and moist chocolate cake", "Alice", "Flour, Cocoa, Sugar, Eggs, Butter", "1 hour","Nut-Free"));
 		recipes.add(new Recipe("Vanilla Ice Cream", "Creamy vanilla ice cream", "Bob", "Milk, Cream, Sugar, Vanilla", "4 hours","Egg-Free"));
@@ -60,8 +60,8 @@ public class MyApp {
         products.add(new product("Dark Chocolate", "Premium dark chocolate with 85% cocoa", 6.99, 50, 30, 0.15, "Chocolate Supplier B","Branch 1"));
         products.add(new product("White Chocolate", "Creamy white chocolate with vanilla", 4.99, 2, 15, 0.05, "Chocolate Supplier C","Branch 1"));
         
-        
-        sellers.add(new orders("Half Dark Chocolate", 2, 11.98, "on way", "bayan", "Branch 1", "Nablus"));
+       
+        sellers.add(new orders("White Chocolate", 2, 11.98, "on way", "bayan", "Branch 1", "Nablus"));
         sellers.add(new orders("White Chocolate", 1, 4.99, "on way", "ahmad", "Branch 2", "Nablus"));
         sellers.add(new orders("Dark Chocolate", 2, 13.98, "on way", "aya", "Branch 3", "Jenin"));
         sellers.add(new orders("Half Dark Chocolate", 3, 17.97, "on way", "amer", "Branch 4", "Jenin"));
@@ -142,6 +142,7 @@ public class MyApp {
 	}
 	
 	
+
 	
 	public void updateRecipe(Recipe currentrecipes2) {
 		for (Recipe recipe : MyApp.recipes) {
@@ -525,7 +526,7 @@ public class MyApp {
 	    
 	    
 	    
-	 
+
 
 	    
 	    
@@ -630,13 +631,178 @@ public class MyApp {
 
 	        return bestSellingProduct;
 	    }
+	    
+	    
+	    
+	    
+	    
+	    
+	    //Bayan
+	    
+	    
+	    
+	    
 
+		public String getBranchOwner(String owner) {
+			 if (owner.equals("")) {
+	    		 this.printStm("Error: owner cannot be empty.");
+	    		 }
+			 for (User user : users) {
+			        if (user.getRole().equals("Owner") && user.getUserName().equals(owner)) {
+			   		 System.out.println("the branch " + owner + " is " + user.getBranch());
+
+			            return user.getBranch();
+			        }
+			    }
+
+			    this.printStm("Owner not found or has no branch.");
+			    return null;
+		
+		}
+
+		public int TotalSales(String branch) {
+			if (branch.equals("")) {
+	    		 this.printStm("Error: branch cannot be empty.");
+	    		 }
+			int totalSales = 0;
+			for (product prod : products) 
+				 if (prod.getBranchName().equals(branch)){
+					 totalSales +=prod.getSalesCount();
+				 }
+			System.out.println("Total Sales for " + branch + "is" + totalSales);
+			return totalSales;
+		}
 
 		
+		public double ProfitsOfBranch(String branch) {
+		
+			double totalProfits = 0.0;
+	        for (orders order : this.sellers)
+	        	 if (order.getBranch().equals(branch)){
+	            totalProfits += order.getPrice();
+	        }
+	        System.out.println("Total Profit for " + branch + "is" + totalProfits);
+	        return totalProfits;
+		}
+
+		public boolean isProductAvailableInBranch(String owner,String productName) {
+			 if (owner == null || productName == null ) {
+			        System.out.println("Invalid input: owner, productName list is null.");
+			        return false;
+			    }
+
+			    String branch = getBranchOwner(owner);
+
+			    if (branch == null) {
+			        System.out.println("Branch not found for owner: " + owner);
+			        return false;
+			    }
+			
+			 for (product prod : products) {
+		            if (prod.getpName().equals(productName) && prod.getBranchName().equals(branch)) {
+		                System.out.println("Name: " + prod.getpName() +" in branch "+ branch );
+
+		                return true; 
+		            }
+		        }
+		        
+		        return false;   
+		    }
+
+		public double ProfitsOfProduct(String product,String productBranchName) {
+			double Profits = 0.0;
+	        for (orders order : this.sellers)
+	        	 if (order.getBranch().equals(productBranchName)&&order.getProductName().equals(product)){
+	           Profits += order.getPrice();
+	        }
+	        System.out.println(" Profit for " + product + " in "+ productBranchName+ "is" + Profits);
+	        return Profits;
+		}
+
+		public int SalesOfProduct(String product,String productBranchName) {
+			int Sales = 0;
+			for (product prod : products) 
+				 if (prod.getBranchName().equals(productBranchName)&&prod.getpName().equals(product)){
+					 Sales +=prod.getSalesCount();
+				 }
+			System.out.println(" Sales for " + product + " in "+ productBranchName+" is " + Sales);
+			return Sales;
+		}
+
+		
+		
+		
+	
+		public List<product> GetTopBestThreeProducts(String bestSellingBranchName) {
+	        return products.stream()
+	            .filter(p -> p.getBranchName().equals(bestSellingBranchName))
+	            .sorted((p1, p2) -> Integer.compare(p2.getSalesCount(), p1.getSalesCount()))
+	            .limit(3)
+	            .collect(Collectors.toList());
+	    }
+	
+		
+		
+		public void OwnerORSuppliersgetInfo(User user) {
+			System.out.println("First Name="+this.currentUser.getFirstName());
+			System.out.println("Last Name="+this.currentUser.getLastName());
+			System.out.println("Password="+this.currentUser.getPassword());
+			System.out.println("User Name="+this.currentUser.getUserName());
+			System.out.println("Email="+this.currentUser.getEmail());
+			System.out.println("Role="+this.currentUser.getRole());
+			System.out.println("City="+this.currentUser.getCity());
+			System.out.println("PhoneNumber="+this.currentUser.getPhoneNumber());
+			System.out.println("Date Of Birth="+this.currentUser.getDateOfBirth());
+			System.out.println("Nationality="+this.currentUser.getNationality());
+			
+		}
+
+	
+
+	
+			
+		
+
+		public void updateOwnerOrSupplierInfo(User currentUser2) {
+			 for (User user : MyApp.users) {
+		          if(user.getUserName().equals(currentUser2.getUserName())) 
+		          {
+		              user.setEmail(currentUser2.getEmail());
+		              user.setUserName(currentUser2.getUserName());
+		              user.setPassword(currentUser2.getPassword());
+		              user.setPhoneNumber(currentUser2.getPhoneNumber());
+		        	  break;
+		          }
+		        }
+			
+		}
+
+		
+		
+		
+		
+		
+		}
 
 	
 
 		
 		
-}
+		
+
+		
+			
+		
+
+		
+
+
+
+
+
+	
+
+		
+		
+
 	 

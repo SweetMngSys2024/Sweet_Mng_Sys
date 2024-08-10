@@ -11,7 +11,6 @@ public class User {
 	public String password;
 	public String firstName;
 	public String lastName;
-	public String email;
 	public int userNameFlag;
 	public int emailFlag;
 	public String role;
@@ -21,10 +20,15 @@ public class User {
 	public ArrayList<Massage> userRecievedMsgs;
 	private String branch;
 	private String cityOwnerSupplier;//where the user works
+	public String email;
+	private String phoneNumber; 
+	private String nationality;
+	private String dateOfBirth; // Add this line
 
-	 
 	
-	public User(String userName, String password, String role, String branch, String cityOwnerSupplier) {
+	 public User(String userName, String password, String role, String branch, String cityOwnerSupplier,
+     String email, String phoneNumber, String nationality, String dateOfBirth) {
+ 
 		super();
 		this.userName = userName;
 		this.password = password;
@@ -33,7 +37,12 @@ public class User {
 		this.cityOwnerSupplier = cityOwnerSupplier;
 		userSentMsgs=new ArrayList<Massage>();
 		userRecievedMsgs=new ArrayList<Massage>();
-	}
+		this.email = email;
+	    this.phoneNumber = phoneNumber;
+	    this.nationality = nationality;
+	    this.dateOfBirth = dateOfBirth;
+	    }
+	
 
 	public User() {
 		role="User";//just for testing my code(shams's code)
@@ -57,6 +66,9 @@ public class User {
 		this.role = role;
 		this.city = city;
 	}
+	
+	
+
 
 	public String getFirstName() {
 		return firstName;
@@ -105,6 +117,30 @@ public class User {
 	}
 
 
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getNationality() {
+		return nationality;
+	}
+
+	public void setNationality(String nationality) {
+		this.nationality = nationality;
+	}
+
+	public String getDateOfBirth() {
+		return dateOfBirth;
+	}
+
+	public void setDateOfBirth(String dateOfBirth) {
+		this.dateOfBirth = dateOfBirth;
+	}
+
 
 	@Override
 	public String toString() {
@@ -113,6 +149,17 @@ public class User {
 	}
 
 
+	public boolean checkPhoneNumber(String phoneNumber2) {
+		if(phoneNumber2.equals("")) {
+			return false;
+			
+		}else 
+		{
+			
+			this.setPhoneNumber(phoneNumber2);
+			return true;
+		}
+	}
 
 	//to check if first name is valid
 	public boolean checkFirstName(String fName) 
@@ -228,11 +275,13 @@ public class User {
 	        }
 	    }
 
+
+	
 	 
 	 
-	 
-	 
-	 
+	
+		
+		
 	public String getCity() {
 		return city;
 	}
@@ -256,5 +305,9 @@ public class User {
 		this.cityOwnerSupplier = cityOwnerSupplier;
 	}
 
+
+
+	}
+ 
 	
-}
+	
