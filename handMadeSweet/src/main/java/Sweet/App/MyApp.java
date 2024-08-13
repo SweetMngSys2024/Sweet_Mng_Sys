@@ -43,7 +43,7 @@ public class MyApp {
 		users.add(new User("bayan", "password123", "User","Jenin"));
 		users.add(new User("ahmad", "password456", "User","Nablus"));
 		users.add(new User("aya", "password789", "Admin"));
-		users.add(new User("amer", "password987", "Admin"));
+		users.add(new User("amer", "password987", "Admin")); 
 		users.add(new User("shams","password654", "Owner", "Branch 3", "Jenin", "shams@example.com", "123-456-7890", "Jordan", "1985-02-20"));
         users.add(new User("raghad", "password321", "Owner", "Branch 2", "Nablus", "raghad@example.com", "234-567-8901", "Palestine", "1987-04-15"));
         users.add(new User("rama", "password675", "Suppliers", "Branch 1", "Nablus",  "rama@example.com", "345-678-9012", "Jordan", "1990-06-30"));
@@ -878,13 +878,14 @@ public class MyApp {
 	    		 this.printStm("Error: owner cannot be empty.");
 	    		 }
 			 for (User user : users) {
-			        if (user.getRole().equals("Owner") && user.getUserName().equals(owner)) {
+			        if (user.getRole().equals("Owner")|| user.getRole().equals("Suppliers")){
+			        	 if(user.getUserName().equals(owner)){
 			   		 System.out.println("the branch " + owner + " is " + user.getBranch());
 
 			            return user.getBranch();
 			        }
 			    }
-
+			 }
 			    this.printStm("Owner not found or has no branch.");
 			    return null;
 		
@@ -899,7 +900,7 @@ public class MyApp {
 				 if (prod.getBranchName().equals(branch)){
 					 totalSales +=prod.getSalesCount();
 				 }
-			System.out.println("Total Sales for " + branch + "is" + totalSales);
+			System.out.println("Total Sales for " + branch + " is " + totalSales);
 			return totalSales;
 		}
 
@@ -911,7 +912,7 @@ public class MyApp {
 	        	 if (order.getBranch().equals(branch)){
 	            totalProfits += order.getPrice();
 	        }
-	        System.out.println("Total Profit for " + branch + "is" + totalProfits);
+	        System.out.println("Total Profit for " + branch + " is " + totalProfits);
 	        return totalProfits;
 		}
 
@@ -945,7 +946,7 @@ public class MyApp {
 	        	 if (order.getBranch().equals(productBranchName)&&order.getProductName().equals(product)){
 	           Profits += order.getPrice();
 	        }
-	        System.out.println(" Profit for " + product + " in "+ productBranchName+ "is" + Profits);
+	        System.out.println(" Profit for " + product + " in "+ productBranchName+ " is " + Profits);
 	        return Profits;
 		}
 
