@@ -7,6 +7,7 @@ import java.util.Scanner;
 import Sweet.App.MyApp;
 import Sweet.App.Recipe;
 import Sweet.App.User;
+import Sweet.App.orders;
 import Sweet.App.product;
 
 
@@ -531,6 +532,41 @@ public class Main {
 			}
 		}
 
+		public static void processAndTrackOrders() {
+		    System.out.println("Processing and tracking orders...");
+		    
+		    if(sweetAppSys.sellers.isEmpty()) {
+		        System.out.println("No orders to process.");
+		        return;
+		    }
+		    for(orders order : sweetAppSys.sellers) {
+		        processOrder(order); 
+		    }
+		    
+		    System.out.println("All orders have been processed.");
+		}
+		
+		
+		public static void processOrder(orders order) {
+			switch (order.getStatus()) {
+	        case "on pending":
+	            System.out.println("Processing pending order: " + order.getOrderId());
+	            break;
+	        case "on deliverd":
+	            System.out.println("Processing delivered order: " + order.getOrderId());
+	            break;
+	        case "on processing":
+	            System.out.println("Processing order in progress: " + order.getOrderId());
+	            break;
+	        case "cancelled":
+	            System.out.println("Processing cancelled order: " + order.getOrderId());
+	            break;
+	        default:
+	            System.out.println("Error: Unknown order status for order: " + order.getOrderId());
+	            break;
+	    }
+			
+		}
 	/////////////////////////////////////////////////////////////////////
 	
 	public static void main(String[] args) {
@@ -651,7 +687,7 @@ public class Main {
                             if(MyApp.users.contains(sweetAppSys.currentUser))continue;
                             break;
                         case 6:
-                            // Call method to process and track orders
+                        	processAndTrackOrders();
                             break;
                         case 7:
                             sweetAppSys.currentUser.isLoggedIn = false;

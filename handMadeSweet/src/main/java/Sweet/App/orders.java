@@ -1,19 +1,19 @@
-
 package Sweet.App;
 
-public class orders { 
+public class orders {
 
-    private String productName;
+	private String productName;
     private int quantity;
     private double price;
     private String status;
     private String userName;
     private String branch;
     private String city;
+    private String orderId;
     
-     
+    
 	public orders(String productName, int quantity, double price, String status, String userName, String branch,
-			String city) {
+			String city,String orderId) {
 		super();
 		this.productName = productName;
 		this.quantity = quantity;
@@ -22,9 +22,16 @@ public class orders {
 		this.userName = userName;
 		this.branch = branch;
 		this.city = city;
+		this.orderId=orderId;
 	}
 	public orders() {
 		
+	}
+	public String getOrderId() {
+		return orderId;
+	}
+	public void setOrderId(String orderId) {
+		this.orderId = orderId;
 	}
 	public String getUserName() {
 		return userName;
@@ -72,7 +79,7 @@ public class orders {
 	
 	public boolean checkBranch(String branch2) {
 		if(branch2.equals(""))return false;
-		else if(branch2.equals("Branch 1")||branch2.equals("Branch 2")) {this.setBranch(branch2); return true;}
+		else if(branch2.equals("Branch 1")||branch2.equals("Branch 2")||branch2.equals("Branch 3")||branch2.equals("Branch 4")) {this.setBranch(branch2); return true;}
 		else {return false;}
 		
 	}
@@ -83,5 +90,12 @@ public class orders {
 		else {return false;}
 		
 	}
+	
+    @Override
+	public String toString() {
+		return "orders [productName=" + productName + ", quantity=" + quantity + ", price=" + price + ", status="
+				+ status + ", userName=" + userName + ", branch=" + branch + ", city=" + city + "]";
+	}
+	
 
 }

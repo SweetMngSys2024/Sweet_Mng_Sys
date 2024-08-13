@@ -65,10 +65,10 @@ public class MyApp {
         products.add(new product("White Chocolate", "Creamy white chocolate with vanilla", 4.99, 2, 15, 0.05, "Chocolate Supplier C","Branch 2"));
         
         
-        sellers.add(new orders("Half Dark Chocolate", 2, 11.98, "on pending", "bayan", "Branch 1", "Nablus"));
-        sellers.add(new orders("White Chocolate", 1, 4.99, "on deliverd", "ahmad", "Branch 2", "Nablus"));
-        sellers.add(new orders("Dark Chocolate", 2, 13.98, "on processing", "aya", "Branch 3", "Jenin"));
-        sellers.add(new orders("Half Dark Chocolate", 3, 17.97, "cancelled", "amer", "Branch 4", "Jenin"));
+        sellers.add(new orders("Half Dark Chocolate", 2, 11.98, "on pending", "bayan", "Branch 1", "Nablus","98765"));
+        sellers.add(new orders("White Chocolate", 1, 4.99, "on deliverd", "ahmad", "Branch 2", "Nablus","98766"));
+        sellers.add(new orders("Dark Chocolate", 2, 13.98, "on processing", "aya", "Branch 3", "Jenin","98767"));
+        sellers.add(new orders("Half Dark Chocolate", 3, 17.97, "cancelled", "amer", "Branch 4", "Jenin","98768"));
        
         
         
