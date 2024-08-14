@@ -16,6 +16,7 @@ public class RawMaterial {
         return materialName;
     }
 
+    
     public void setMaterialName(String materialName) {
         this.materialName = materialName;
     }
