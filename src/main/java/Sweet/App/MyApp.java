@@ -171,7 +171,7 @@ public class MyApp {
 
 	public boolean checkSearchField(String search) {
 
-		if(search=="")return false;
+		if(search.equals(""))return false;
 		else {
 			 ArrayList<Recipe> recipes = MyApp.getRecipes();
 			    for (Recipe recipe : recipes) {
@@ -775,7 +775,7 @@ public class MyApp {
 	public boolean handleOrderStatus(String status2, String branch) {
 		String status=status2.toLowerCase();
 		
-		if(!(status=="on pending"||status=="on delivered"||status=="on processing"||status=="cancelled")) return false;
+		if(!(status.equals("on pending")||status.equals("on delivered")||status.equals("on processing")||status.equals("cancelled"))) return false;
 		
 
 	    for (orders order : sellers) {
