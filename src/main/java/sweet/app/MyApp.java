@@ -820,41 +820,44 @@ public class MyApp {
 		}
 	}
 
+	public boolean checkStatus(String status){
+
+		return status.equals(STATUS_ON_PENDING)||status.equals(STATUS_ON_DELIVERED)||status.equals(STATUS_ON_PROCESSING)||status.equals(STATUS_CANCELLED);
+	}
+
+	public void processOrderByStatus(orders order, String status)
+	{
+		String orderStatus=order.getStatus().toLowerCase();
+		if(orderStatus.equals(STATUS_ON_PENDING)&&status.equals(STATUS_ON_PENDING)){
+			 handlePendingOrder(order);
+	                 order.setStatus(STATUS_ON_PROCESSING);
+		}
+		else if(orderStatus.equals(STATUS_ON_PROCESSING)&&status.equals(STATUS_ON_PROCESSING)){
+			 handleProcessingOrder(order);
+	                 order.setStatus(STATUS_ON_DELIVERED);
+		}
+
+		else if(orderStatus.equals(STATUS_ON_DELIVERED)&&status.equals(STATUS_ON_DELIVERED)){
+			 handleDeliveredOrder(order);
+	                order.setStatus(STATUS_CANCELLED);
+		}
+		else if(orderStatus.equals(STATUS_CANCELLED)&&status.equals(STATUS_CANCELLED)){
+			 handleCancelledOrder(order);
+		}    
+	              
+	          return;
+	}
+
+	
 	public boolean handleOrderStatus(String status2, String branch) {
 		String status=status2.toLowerCase();
 		
-		if(!(status.equals(STATUS_ON_PENDING)||status.equals(STATUS_ON_DELIVERED)||status.equals(STATUS_ON_PROCESSING)||status.equals(STATUS_CANCELLED))) return false;
+		if(!(checkStatus(status)) return false;
 		
 
 	    for (orders order : sellers) {
 	        if (order.getBranch().equalsIgnoreCase(branch)) {
-	            switch (order.getStatus().toLowerCase()) {
-	                case STATUS_ON_PENDING:
-	                    if (status.equals(STATUS_ON_PENDING)) {
-	                        handlePendingOrder(order);
-	                        order.setStatus(STATUS_ON_PROCESSING);
-	                    }
-	                    break;
-	                case STATUS_ON_PROCESSING:
-	                    if (status.equals(STATUS_ON_PROCESSING)) {
-	                        handleProcessingOrder(order);
-	                        order.setStatus(STATUS_ON_DELIVERED);
-	                    }
-	                    break;
-	                case STATUS_ON_DELIVERED:
-	                    if (status.equals(STATUS_ON_DELIVERED)) {
-	                        handleDeliveredOrder(order);
-	                        order.setStatus(STATUS_CANCELLED);
-	                    }
-	                    break;
-	                case STATUS_CANCELLED:
-	                    if (status.equals(STATUS_CANCELLED)) {
-	                        handleCancelledOrder(order);
-	                    }
-	                    break;
-
-			    default: break;	    
-	            }
+	        processOrderByStatus(orders order, String status);
 	        }
 	    }
 	    return true;
