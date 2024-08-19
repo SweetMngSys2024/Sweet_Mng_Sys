@@ -852,7 +852,7 @@ public class MyApp {
 	public boolean handleOrderStatus(String status2, String branch) {
 		String status=status2.toLowerCase();
 		
-		if(!(checkStatus(status)) return false;
+		if(!checkStatus(status)) return false;
 		
 
 	    for (orders order : sellers) {
