@@ -43,7 +43,7 @@ public class MyApp {
 	private String qntLable;
 	private String userNameLable;
 	private String productNameLable;
-	private String totPriceString
+	private String totPriceString;
 	
 	
 	 
@@ -720,7 +720,7 @@ public class MyApp {
 		for(orders order: sellers) 
 		{
 			if(order.getBranch().equals(branch2)) {
-			printStm(userNameLable+order.getUserName()+totPriceLable+order.getPrice()+productNameLable+order.getProductName()+qntLable+order.getQuantity()statusLable+order.getStatus());}
+			printStm(userNameLable+order.getUserName()+totPriceLable+order.getPrice()+productNameLable+order.getProductName()+qntLable+order.getQuantity()+statusLable+order.getStatus());}
 		}return true;
 	}
 
