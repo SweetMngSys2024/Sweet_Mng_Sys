@@ -857,7 +857,7 @@ public class MyApp {
 
 	    for (orders order : sellers) {
 	        if (order.getBranch().equalsIgnoreCase(branch)) {
-	        processOrderByStatus(orders order, String status);
+	        processOrderByStatus(order, status);
 	        }
 	    }
 	    return true;
