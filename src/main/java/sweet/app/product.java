@@ -1,4 +1,4 @@
-package Sweet.App;
+package sweet.app;
 
 public class product {
 	 

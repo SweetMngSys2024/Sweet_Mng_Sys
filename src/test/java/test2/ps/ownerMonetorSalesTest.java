@@ -5,11 +5,11 @@ import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
-import Sweet.App.MyApp;
-import Sweet.App.product;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import sweet.app.MyApp;
+import sweet.app.product;
 
 public class ownerMonetorSalesTest {
 	MyApp sweetApp;

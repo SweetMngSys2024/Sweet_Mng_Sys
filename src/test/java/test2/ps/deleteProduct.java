@@ -7,12 +7,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import Sweet.App.MyApp;
-import Sweet.App.User;
-import Sweet.App.product;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import sweet.app.MyApp;
+import sweet.app.User;
+import sweet.app.product;
 
 public class deleteProduct {
 

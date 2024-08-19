@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import Sweet.App.FeedBack;
-import Sweet.App.Massage;
-import Sweet.App.MyApp;
-import Sweet.App.Recipe;
-import Sweet.App.User;
-import Sweet.App.product;
+import sweet.app.FeedBack;
+import sweet.app.Massage;
+import sweet.app.MyApp;
+import sweet.app.Recipe;
+import sweet.app.User;
+import sweet.app.product;
 
 public class Main {
 
@@ -1220,7 +1220,7 @@ private static void updateProduct(Scanner input) {
 		boolean checkProductArray=sweetAppSys.showAllProductsInTheBranch(sweetAppSys.currentUser.getBranch());
 		if(!checkProductArray)System.out.println("There's no product!!!");
 		
-		sweetAppSys.applayDiscount(minPrice,appliedDiscount,sweetAppSys.currentUser.getBranch());
+		sweetAppSys.applyDiscountToProduct(minPrice,appliedDiscount,sweetAppSys.currentUser.getBranch());
 		
 		System.out.println("\n\nThen the all product after discount are:");
 		boolean checkProductArray2=sweetAppSys.showAllProductsInTheBranch(sweetAppSys.currentUser.getBranch());

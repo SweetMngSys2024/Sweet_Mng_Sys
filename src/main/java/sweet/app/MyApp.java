@@ -1,4 +1,4 @@
-package Sweet.App;
+package sweet.app;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class MyApp {
 	 public Recipe currentRecipe;
 	 public product currentProduct;
 	 public orders currentOrder;
-	 public boolean applayDiscount;
+	 public boolean applyDiscount;
 	 public int buyProductCase;
 
 	
@@ -34,7 +34,7 @@ public class MyApp {
 		MyApp.allMassages=new ArrayList<Massage>();
 		MyApp.feedBacks=new ArrayList<FeedBack>();
 		MyApp.materials=new ArrayList<RawMaterial>();
-		applayDiscount=false;
+		applyDiscount=false;
 		buyProductCase=0;
 
 
@@ -171,7 +171,7 @@ public class MyApp {
 
 	public boolean checkSearchField(String search) {
 
-		if(search.equals(""))return false;
+		if(search=="")return false;
 		else {
 			 ArrayList<Recipe> recipes = MyApp.getRecipes();
 			    for (Recipe recipe : recipes) {
@@ -764,8 +764,8 @@ public class MyApp {
 		}return true;
 	}
 
-	public void applayDiscount(double minPrice, double discount,String branch) {
-		this.applayDiscount=true;
+	public void applyDiscountToProduct(double minPrice, double discount,String branch) {
+		this.applyDiscount=true;
 		for(product prod: products) 
 		{
 			if(prod.getPrice()>=minPrice && prod.getBranchName().equals(branch) && prod.getDiscount()<discount)prod.setDiscount(discount);
@@ -775,7 +775,7 @@ public class MyApp {
 	public boolean handleOrderStatus(String status2, String branch) {
 		String status=status2.toLowerCase();
 		
-		if(!(status.equals("on pending")||status.equals("on delivered")||status.equals("on processing")||status.equals("cancelled"))) return false;
+		if(!(status=="on pending"||status=="on delivered"||status=="on processing"||status=="cancelled")) return false;
 		
 
 	    for (orders order : sellers) {

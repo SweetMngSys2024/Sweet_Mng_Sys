@@ -1,4 +1,4 @@
-package Sweet.App;
+package sweet.app;
 
 public class RawMaterial {
 
@@ -16,7 +16,6 @@ public class RawMaterial {
         return materialName;
     }
 
-    
     public void setMaterialName(String materialName) {
         this.materialName = materialName;
     }

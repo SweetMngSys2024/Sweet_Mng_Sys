@@ -1,4 +1,4 @@
-package Sweet.App;
+package sweet.app;
 
 import java.util.ArrayList;
 

@@ -3,9 +3,9 @@ package test2.ps;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import Sweet.App.MyApp;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import sweet.app.MyApp;
 
 public class filterRecipe {
 	

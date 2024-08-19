@@ -5,12 +5,12 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import Sweet.App.MyApp;
-import Sweet.App.User;
-import Sweet.App.product;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import sweet.app.MyApp;
+import sweet.app.User;
+import sweet.app.product;
 
 public class dynamicDiscount {
 
@@ -63,8 +63,8 @@ public dynamicDiscount(MyApp sweetApp) {
 	@Then("the discount should be applied to all products with prices greater than or equal to {string}")
 	public void theDiscountShouldBeAppliedToAllProductsWithPricesGreaterThanOrEqualTo(String string) {
 		if(verifyUser!=null) {
-	    sweetApp.applayDiscount(minPrice,discount,verifyUser.getBranch());}
-	    assertTrue("Can't do the discount!",sweetApp.applayDiscount);
+	    sweetApp.applyDiscountToProduct(minPrice,discount,verifyUser.getBranch());}
+	    assertTrue("Can't do the discount!",sweetApp.applyDiscount);
 	}
 
 
@@ -77,7 +77,7 @@ public dynamicDiscount(MyApp sweetApp) {
 
 	@Then("the discount should not be applied to any products with prices below {string}")
 	public void theDiscountShouldNotBeAppliedToAnyProductsWithPricesBelow(String string) {
-		  assertFalse("We did the discount!",sweetApp.applayDiscount);
+		  assertFalse("We did the discount!",sweetApp.applyDiscount);
 	}
 
 

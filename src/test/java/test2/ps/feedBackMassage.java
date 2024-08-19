@@ -3,11 +3,11 @@ package test2.ps;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
-import Sweet.App.FeedBack;
-import Sweet.App.Massage;
-import Sweet.App.MyApp;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import sweet.app.FeedBack;
+import sweet.app.Massage;
+import sweet.app.MyApp;
 
 public class feedBackMassage {
 

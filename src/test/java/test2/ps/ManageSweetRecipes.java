@@ -5,10 +5,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
-import Sweet.App.MyApp;
-import Sweet.App.Recipe;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import sweet.app.MyApp;
+import sweet.app.Recipe;
 
 public class ManageSweetRecipes {
  
