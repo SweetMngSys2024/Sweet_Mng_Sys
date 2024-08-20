@@ -139,12 +139,11 @@ public class product {
 			    }
 		}
 	}
-	static public double checkMinPrice(String price2) {
+	public static double checkMinPrice(String price2) {
 		if(price2.equals("")) { System.out.println("Don't let price field empty!"); return -1;}
 		else {
 			 try {
-			        double p=Double.parseDouble(price2);
-			        return p;
+				 return Double.parseDouble(price2);
 			    } catch (NumberFormatException e) {
 			    	System.out.println("Enter a number in the price field!");
 			        return -1;

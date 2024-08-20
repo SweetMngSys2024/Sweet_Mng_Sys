@@ -307,12 +307,7 @@ public class User {
 
 	public boolean checkEmptyPassOrUname(String password,String uname) //for log in
 	{
-		if(password.equals("")) { return false;}
-		else if(uname.equals("")) { return false;}
-		else 
-		   {
-			return true;
-			}
+		 return !password.equals("") && !uname.equals("");
 	}
 
 	public boolean checkCity(String city2) {
