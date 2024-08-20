@@ -7,13 +7,14 @@ import java.util.stream.Collectors;
 public class MyApp {
 
 	 private static final Logger logger = Logger.getLogger(MyApp.class.getName());
-	  static public ArrayList<User> users = new ArrayList<User>();
-	 static public ArrayList<Recipe> recipes = new ArrayList<Recipe>();
-	 static public ArrayList<orders> sellers = new ArrayList<orders>();
-	 static public ArrayList<product> products = new ArrayList<product>();
-	 static public ArrayList<Massage> allMassages = new ArrayList<Massage>();
-	 static public ArrayList<FeedBack> feedBacks = new ArrayList<FeedBack>();
-	 static public ArrayList<RawMaterial> materials = new ArrayList<RawMaterial>();
+	 
+	 static public ArrayList<User> users = new ArrayList<>();
+	 static public ArrayList<Recipe> recipes = new ArrayList<>();
+	 static public ArrayList<orders> sellers = new ArrayList<>();
+	 static public ArrayList<product> products = new ArrayList<>();
+	 static public ArrayList<Massage> allMassages = new ArrayList<>();
+	 static public ArrayList<FeedBack> feedBacks = new ArrayList<>();
+	 static public ArrayList<RawMaterial> materials = new ArrayList<>();
 	 public User currentUser;
 	 public Recipe currentRecipe;
 	 public product currentProduct;
@@ -48,6 +49,14 @@ public class MyApp {
 	
 	  public MyApp() {
 
+		  MyApp.users=new ArrayList<User>();
+		MyApp.recipes=new ArrayList<Recipe>();
+		  MyApp.sellers=new ArrayList<orders>();
+		MyApp.products=new ArrayList<product>();
+		  MyApp.allMassages=new ArrayList<Massage>();
+		MyApp.feedBacks=new ArrayList<FeedBack>();
+		MyApp.materials=new ArrayList<RawMaterial>();
+		  
 		this.currentUser=new User();
 		this.currentProduct=new product();
 		this.currentOrder=new orders();
