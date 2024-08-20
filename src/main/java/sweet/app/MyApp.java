@@ -198,8 +198,7 @@ public class MyApp {
 
 
 	public boolean authenticateUser(String username, String password, String role) {
-	    ArrayList<User> users = MyApp.getUsers();
-	    for (User user : users) {
+	    for (User user : MyApp.getUsers()) {
 	        if (user.getUserName().equals(username) && user.getPassword().equals(password) && user.getRole().equals(role)) {
 	        	this.currentUser=user;
 	        	 return true;
@@ -223,8 +222,7 @@ public class MyApp {
 
 		if(search.equals(""))return false;
 		else {
-			 ArrayList<Recipe> recipes = MyApp.getRecipes();
-			    for (Recipe recipe : recipes) {
+			    for (Recipe recipe : MyApp.getRecipes()) {
 			        if (recipe.getTitle().equals(search)) {
 			        	this.currentRecipe=recipe;
 			        	 return true;
@@ -458,11 +456,10 @@ public class MyApp {
     
     
     public void ViewAllRecipes() {
-    	ArrayList<Recipe> recipes = MyApp.recipes;
-    	if (recipes.isEmpty()) {
+    	if (MyApp.recipes.isEmpty()) {
     		 printStm("No recipes found.");
     	}else {
-    		for (Recipe recipe : recipes) {
+    		for (Recipe recipe : MyApp.recipes) {
     			printStm(recipe.toString());
     		}
     	}
@@ -519,15 +516,12 @@ public class MyApp {
 	 
 	
 	 
-    public boolean ViewAllUser() {
-    	
-    	 ArrayList<User> users = MyApp.getUsers();
-    	    
-    	    if (users.isEmpty()) {
+    public boolean ViewAllUser() { 
+    	    if (MyApp.getUsers().isEmpty()) {
     	       printStm("No user accounts found.");
     	        return false;
     	    } else {
-    	        for (User user : users) {
+    	        for (User user : MyApp.getUsers()) {
     	            printStm("Username: " + user.getUserName() + ", Type: " + user.getRole());
     	        }
     	        return true;
@@ -537,13 +531,11 @@ public class MyApp {
     
     
     public  boolean viewAllMaterial() {
-        ArrayList<RawMaterial> materials = MyApp.materials;
-
-        if (materials.isEmpty()) {
+        if (MyApp.materials.isEmpty()) {
             printStm("No raw materials found.");
             return false;
         } else {
-            for (RawMaterial material : materials) {
+            for (RawMaterial material : MyApp.materials) {
 
                 printStm(material.toString());
     		}
@@ -558,8 +550,8 @@ public class MyApp {
     		 printStm("No feedBacks found.");
     		 return false;
     	}else {
-    		for (FeedBack feedBacks: feedBacks) {
-    			printStm(feedBacks.toString());
+    		for (FeedBack theFeedBack: feedBacks) {
+    			printStm(theFeedBack.toString());
     		}
     	}return true;
 	}
