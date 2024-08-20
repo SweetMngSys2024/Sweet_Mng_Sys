@@ -1,6 +1,6 @@
 
 Feature:  filter the recipes
- 
+
 
   Scenario: enter invalid option
     When user enter "5" 
@@ -18,5 +18,5 @@ Feature:  filter the recipes
       | type|
       | 1 |  
       | 2 | 
-      |3|  
+      |3| 
       |4|

@@ -1,4 +1,4 @@
-package test2.ps;
+package testClasses.ps;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -7,7 +7,7 @@ import Sweet.App.MyApp;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
- 
+
 public class mngUserProfile {
 
 	MyApp sweetApp;
@@ -24,9 +24,9 @@ public class mngUserProfile {
 
 	@When("the user is logged in")
 	public void theUserIsLoggedIn() {
-    	if(sweetApp.currentUser.isLoggedIn==false) {sweetApp.currentUser.isLoggedIn=true;}
-    	assertTrue("the user must be logged in!",sweetApp.currentUser.isLoggedIn==true);
-	} 
+    	if(sweetApp.currentUser.isLoggedIn()==false) {sweetApp.currentUser.setLoggedIn(true);}
+    	assertTrue("the user must be logged in!",sweetApp.currentUser.isLoggedIn()==true);
+	}
 
 	@Then("the user can see his information")
 	public void theUserCanSeeHisInformation() {

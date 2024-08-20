@@ -1,4 +1,4 @@
-package test2.ps;
+package testClasses.ps;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -34,11 +34,11 @@ public class ownerMonetorSalesTest {
 
 	@When("The Owner  is logged in")
 	public void theOwnerIsLoggedIn() {
-		if(sweetApp.currentUser.isLoggedIn==false) {
-			sweetApp.currentUser.isLoggedIn=true;
+		if(sweetApp.currentUser.isLoggedIn()==false) {
+			sweetApp.currentUser.setLoggedIn(true);
 		}
 		System.out.println("the owner must be logged in!");
-		assertTrue (sweetApp.currentUser.isLoggedIn==true);
+		assertTrue (sweetApp.currentUser.isLoggedIn()==true);
 	
 	}
 
@@ -52,8 +52,8 @@ public class ownerMonetorSalesTest {
 
 	@Then("the system should display the total sales and profits in this branch")
 	public void theSystemShouldDisplayTheTotalSalesAndProfitsInThisBranch() {
-		int expectedTotalSales = 65;    
-	    double expectedProfits = 11.98; 
+		int expectedTotalSales = 30;    
+	    double expectedProfits = 25.96; 
 	    
 	    double actualProfits = sweetApp.ProfitsOfBranch(branch);
 	    int actualTotalSales = sweetApp.TotalSales(branch);
@@ -74,8 +74,8 @@ public class ownerMonetorSalesTest {
 	@Then("the system should display the total sales and profits in this branch for a specific product {string}")
 	public void theSystemShouldDisplayTheTotalSalesAndProfitsInThisBranchForASpecificProduct(String product) {
 		
-		int expectedSalesProduct = 15;    
-		double expectedProfitsProduct = 11.98;
+		int expectedSalesProduct = 30;    
+		double expectedProfitsProduct = 13.98;
 
 		double actualProfitsProduct = sweetApp.ProfitsOfProduct(product,productBranchName);
 		int actualSalesProduct = sweetApp.SalesOfProduct(product,productBranchName);

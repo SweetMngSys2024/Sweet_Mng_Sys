@@ -1,4 +1,4 @@
-package test2.ps;
+package testClasses.ps;
 
 import org.junit.runner.RunWith;
 import io.cucumber.junit.Cucumber;
@@ -11,7 +11,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		plugin= {"summary","html:C:/Users/ThinkPad/git/repository/handMadeSweet/target/cucumber/report.html"},
 		monochrome=true,
 		snippets=SnippetType.CAMELCASE,
-		glue="test2.ps"
+		glue="testClasses.ps"
 	
 		)
 

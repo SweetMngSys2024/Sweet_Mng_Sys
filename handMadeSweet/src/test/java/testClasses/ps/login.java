@@ -1,4 +1,4 @@
-package test2.ps;
+package testClasses.ps;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -7,7 +7,7 @@ import Sweet.App.MyApp;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
- 
+
 public class login {
 	MyApp sweetApp;
 	
@@ -18,16 +18,16 @@ public class login {
 
 	@Given("user is not in the sweet system")
 	public void userIsNotInTheSweetSystem() {
-		   assertFalse(sweetApp.currentUser.isLoggedIn);
-	} 
+		   assertFalse(sweetApp.currentUser.isLoggedIn());
+	}
 
 	@When("user logs in with username {string} and password {string} and role {string} logs in")
 	public void userLogsInWithUsernameAndPasswordAndRoleLogsIn(String password, String username, String role) {
 		  if (!(sweetApp.currentUser.checkEmptyPassOrUname(password, username))) {  
-	        	sweetApp.currentUser.isLoggedIn = false;
+	        	sweetApp.currentUser.setLoggedIn(false);
 	        } 
 	        else {
-	        	if(sweetApp.authenticateUser(password, username, role))sweetApp.currentUser.isLoggedIn=true;
+	        	if(sweetApp.authenticateUser(password, username, role))sweetApp.currentUser.setLoggedIn(true);
 	        //	sweetApp.currentUser.isLoggedIn = sweetApp.authenticateUser(password, username, role);
 	 
 	        }
@@ -36,11 +36,11 @@ public class login {
 	@Then("the login result should be {string}")
 	public void theLoginResultShouldBe(String expectedResult) {
 		  if (expectedResult.equals("logged_in")) {
-	            assertTrue("is logged in must be true",sweetApp.currentUser.isLoggedIn);
+	            assertTrue("is logged in must be true",sweetApp.currentUser.isLoggedIn());
 	        } else if (expectedResult.equals("failed_login_password")) {
-	            assertFalse(sweetApp.currentUser.isLoggedIn);
+	            assertFalse(sweetApp.currentUser.isLoggedIn());
 	        } else if (expectedResult.equals("failed_login_username")) {
-	            assertFalse(sweetApp.currentUser.isLoggedIn);
+	            assertFalse(sweetApp.currentUser.isLoggedIn());
 	        }
 	}
 

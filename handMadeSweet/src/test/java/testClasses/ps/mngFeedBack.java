@@ -1,6 +1,7 @@
-package test2.ps;
+package testClasses.ps;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import Sweet.App.MyApp;
 import io.cucumber.java.en.Then;
@@ -16,12 +17,13 @@ public class mngFeedBack {
 	
 	@Then("the Admin can see all feedback")
 	public void theAdminCanSeeAllFeedback() {
-		sweetApp.ViewAllFeedBack();
+		if(sweetApp.ViewAllFeedBack())assertTrue(sweetApp.ViewAllFeedBack());
+		assertFalse(sweetApp.ViewAllFeedBack());
 	}
 
 	@When("the Admin wants to delete feedback with username {string} on product {string}")
 	public void theAdminWantsToDeleteFeedbackWithUsernameOnProduct(String username, String product) {
-		if (sweetApp.currentUser.getRole().equals("Admin") && sweetApp.currentUser.isLoggedIn) {
+		if (sweetApp.currentUser.getRole().equals("Admin") && sweetApp.currentUser.isLoggedIn()) {
 			 sweetApp.deleteFeedBack(username,product);
 		}
 	}

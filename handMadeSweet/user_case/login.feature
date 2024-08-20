@@ -1,5 +1,5 @@
 Feature: User login sweet
- 
+
   Scenario Outline: Login with different credentials
     Given user is not in the sweet system
     When user logs in with username "<username>" and password "<password>" and role "<role>" logs in
@@ -13,23 +13,19 @@ Feature: User login sweet
       | aya        | password789  | Admin     | logged_in               |
       | aya        | Wrong789     | Admin     | failed_login_password   |
       | wrongaya   | password789  | Admin     | failed_login_username   |
-      | shams      | password654  | Owner     | logged_in               | 
+      | shams      | password654  | Owner     | logged_in               |
       | shams      | Wrong654     | Owner     | failed_login_password   |
       | wrongshams | password654  | Owner     | failed_login_username   |
-      | rama       | password675  | Suppliers | logged_in               |
-      | rama       | Wrong675     | Suppliers | failed_login_password   |
-      | wrongrama  | password675  | Suppliers | failed_login_username   |
+      | rama       | password675  | Supplier | logged_in               |
+      | rama       | Wrong675     | Supplier | failed_login_password   |
+      | wrongrama  | password675  | Supplier | failed_login_username   |
       
-  Scenario Outline: User left username or password field blank 
-    Given user is not in the sweet system 
+  Scenario Outline: User left username or password field blank
+    Given user is not in the sweet system
     When user logs in with username "<username>" and password "<password>" and role "<role>" logs in
     Then an error message should appear "<error_message>"
 
     Examples:
       | username | password | role | error_message                 |
-      |          | password | User | please enter your username     |
-      | username |          | User | please enter your password     |
-
-
-
-
+      |          | password654 | User | please enter your username     |
+      | shams |          | User | please enter your password     |

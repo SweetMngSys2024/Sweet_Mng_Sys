@@ -1,4 +1,5 @@
-package test2.ps;
+
+package testClasses.ps;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;

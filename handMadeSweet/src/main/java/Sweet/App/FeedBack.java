@@ -1,6 +1,8 @@
 package Sweet.App;
+
 import java.util.ArrayList;
-public class FeedBack { 
+
+public class FeedBack {
 
 	private String uNameSrc;
 	private String mgs;
@@ -9,6 +11,13 @@ public class FeedBack {
 	
 	public FeedBack() {
 	}
+
+	@Override
+	public String toString() {
+		return "FeedBack [uNameSrc=" + uNameSrc + ", mgs=" + mgs + ", productRecipeName=" + productRecipeName
+				+ ", type=" + type + "]";
+	}
+
 	public String getType() {
 		return type;
 	}
@@ -25,11 +34,6 @@ public class FeedBack {
 		this.uNameSrc = uNameSrc;
 	}
 
-	@Override
-	public String toString() {
-		return "FeedBack [uNameSrc=" + uNameSrc + ", mgs=" + mgs + ", productRecipeName=" + productRecipeName
-				+ ", type=" + type + "]";
-	}
 	public String getMgs() {
 		return mgs;
 	}
@@ -51,39 +55,47 @@ public class FeedBack {
 		this.mgs = mgs;
 		this.productRecipeName = productRecipeName;
 	}
-	public  boolean checkType(String type) {
-		if(type.equals(""))return false;
-		else if(type.equals("Recipe")||type.equals("Product")) {return true;}
-		else return false;
-	}
+	
+	public boolean checkType(String type) {
+		return type.equals("") ? false : type.equalsIgnoreCase("Recipe")||type.equalsIgnoreCase("Product");
+			}
+	
+	
 	public  boolean checkMsg(String msg) {
-		if(msg.equals(""))return false;
-		else return true;
-	}
-	public  boolean checkName(String name) {
-		  if (name == null || name.equals("")) return false;
-		    if (type == null || type.equals("")) return false;
+				return !msg.equals("");
+			}
 
-		    if (type.equals("Product")) {
-		        ArrayList<product> prods = MyApp.getProducts();
-		        for (product prod : prods) {
-		            if (prod.getpName().equals(name)) {
-		                return true;
-		            }
-		        }
-		        return false;
-		    } else if (type.equals("Recipe")) {
-		        ArrayList<Recipe> recs = MyApp.getRecipes();
-		        for (Recipe rec : recs) {
-		            if (rec.getTitle().equals(name)) {
-		                return true;
-		            }
-		        }
-		        return false;
-		    } else {
-		        return false;
-		    }
 
-	}
+	public boolean checkName(String name) {
+    if (isNullOrEmpty(name) || isNullOrEmpty(type)) {
+        return false;
+    }
+
+    if (type.equalsIgnoreCase("Product")) {
+        return checkIfNameExists(MyApp.getProducts(), name);
+    } else if (type.equalsIgnoreCase("Recipe")) {
+        return checkIfNameExists(MyApp.getRecipes(), name);
+    }
+
+    return false;
+}
+
+private boolean isNullOrEmpty(String str) {
+    return str == null || str.equals("");
+}
+
+private <T> boolean checkIfNameExists(ArrayList<T> items, String name) {
+    for (T item : items) {
+        if (item instanceof product && ((product) item).getpName().equals(name)) {
+            return true;
+        } else if (item instanceof Recipe && ((Recipe) item).getTitle().equals(name)) {
+            return true;
+        }
+    }
+    return false;
+}
 	
 }
+
+
+	

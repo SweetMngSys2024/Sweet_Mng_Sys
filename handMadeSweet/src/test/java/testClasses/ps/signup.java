@@ -1,5 +1,5 @@
-package test2.ps;
- 
+package testClasses.ps;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -8,7 +8,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class signup {
-   
+
 	MyApp sweetApp;
 	
 	
@@ -21,7 +21,7 @@ public class signup {
 	public void userEnterInTheFirstNameField(String fName ) {
 		boolean fNameFlag = sweetApp.currentUser.checkFirstName(fName);
 		if(fNameFlag==true)assertTrue("check first name failed", fNameFlag);
-	 	else assertFalse("check first name passed", fNameFlag);
+		else assertFalse("check first name passed", fNameFlag);
 		
 		
 	}
@@ -70,6 +70,13 @@ public class signup {
 		sweetApp.printStm(msg);
 		assertTrue("test case failed", true);
 	
+	}
+
+	@When("user enter {string} in the city field")
+	public void userEnterInTheCityField(String city) {
+		boolean cFlag = sweetApp.currentUser.checkCity(city);
+		if(cFlag==true)assertTrue(cFlag);
+		else assertFalse(cFlag);
 	}
 
 

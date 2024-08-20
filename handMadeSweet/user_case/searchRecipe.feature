@@ -1,6 +1,6 @@
 
 Feature: Search for a recipe
- 
+
  
    Scenario: search for specific recipe
     When user enter "Chocolate Cake" in the search filed
@@ -14,4 +14,4 @@ Feature: Search for a recipe
     Examples: 
       | input  | msg | 
       |  |     please do not let the search field blank | 
-      | 123 |   sorry, we can not find what do you want   |  
+      | 123 |   sorry, we can not find what do you want   | 

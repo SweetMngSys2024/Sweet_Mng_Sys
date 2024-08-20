@@ -1,61 +1,60 @@
-package Sweet.App; 
+package Sweet.App;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
-public class User { 
+public class User {
 
-	public String userName;
-	public String password;
-	public String firstName;
-	public String lastName;
-	public int userNameFlag;
-	public int emailFlag;
-	public String role;
-	public boolean isLoggedIn;
-	public String city;//where the user live
-	public ArrayList<Massage> userSentMsgs;
-	public ArrayList<Massage> userRecievedMsgs;
+	private String userName;
+	private String password;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private int userNameFlag;
+	private int emailFlag;
+	private String role;
+	private boolean isLoggedIn;
+	private String city;//where the user live
+	private List<Massage> userSentMsgs;
+	private List<Massage> userRecievedMsgs;
 	private String branch;
 	private String cityOwnerSupplier;//where the user works
-	public String email;
 	private String phoneNumber; 
 	private String nationality;
-	private String dateOfBirth; // Add this line
+	private String dateOfBirth;
 
 	
 	 public User(String userName, String password, String role, String branch, String cityOwnerSupplier,
-     String email, String phoneNumber, String nationality, String dateOfBirth) {
- 
-		super();
-		this.userName = userName;
-		this.password = password;
-		this.role = role;
-		this.branch = branch;
-		this.cityOwnerSupplier = cityOwnerSupplier;
-		userSentMsgs=new ArrayList<Massage>();
-		userRecievedMsgs=new ArrayList<Massage>();
-		this.email = email;
-	    this.phoneNumber = phoneNumber;
-	    this.nationality = nationality;
-	    this.dateOfBirth = dateOfBirth;
-	    }
+		     String email, String phoneNumber, String nationality, String dateOfBirth) {
+		 
+				super();
+				this.userName = userName;
+				this.password = password;
+				this.role = role;
+				this.branch = branch;
+				this.cityOwnerSupplier = cityOwnerSupplier;
+				userSentMsgs=new ArrayList<>();
+				userRecievedMsgs=new ArrayList<>();
+				this.email = email;
+			    this.phoneNumber = phoneNumber;
+			    this.nationality = nationality;
+			    this.dateOfBirth = dateOfBirth;
+			    }
 	
 
 	public User() {
 		role="User";//just for testing my code(shams's code)
-		userSentMsgs=new ArrayList<Massage>();
-		userRecievedMsgs=new ArrayList<Massage>();
+		userSentMsgs=new ArrayList<>();
+		userRecievedMsgs=new ArrayList<>();
 	}
 	   
 	public User(String username2, String password2,String role2) {
 		this.userName=username2;
 	    this.password=password2;
 		this.role=role2;
-		userSentMsgs=new ArrayList<Massage>();
-		userRecievedMsgs=new ArrayList<Massage>();
+		userSentMsgs=new ArrayList<>();
+		userRecievedMsgs=new ArrayList<>();
+	
 		}
 		
 
@@ -66,11 +65,77 @@ public class User {
 		this.password = password;
 		this.role = role;
 		this.city = city;
-		userSentMsgs=new ArrayList<Massage>();
-		userRecievedMsgs=new ArrayList<Massage>();
+		userSentMsgs=new ArrayList<>();
+		userRecievedMsgs=new ArrayList<>();
 	}
+
 	
 	
+	
+
+
+	public void setUserRecievedMsgs(ArrayList<Massage> userRecievedMsgs) {
+		this.userRecievedMsgs = userRecievedMsgs;
+	}
+
+
+	
+
+
+	public List<Massage> getUserSentMsgs() {
+		return userSentMsgs;
+	}
+
+
+	public void setUserSentMsgs(List<Massage> userSentMsgs) {
+		this.userSentMsgs = userSentMsgs;
+	}
+
+
+	public List<Massage> getUserRecievedMsgs() {
+		return userRecievedMsgs;
+	}
+
+
+	public void setUserRecievedMsgs(List<Massage> userRecievedMsgs) {
+		this.userRecievedMsgs = userRecievedMsgs;
+	}
+
+
+	public void setUserSentMsgs(ArrayList<Massage> userSentMsgs) {
+		this.userSentMsgs = userSentMsgs;
+	}
+
+
+	public boolean isLoggedIn() {
+		return isLoggedIn;
+	}
+
+
+	public void setLoggedIn(boolean isLoggedIn) {
+		this.isLoggedIn = isLoggedIn;
+	}
+
+
+	public int getUserNameFlag() {
+		return userNameFlag;
+	}
+
+
+	public int getEmailFlag() {
+		return emailFlag;
+	}
+
+
+	public void setEmailFlag(int emailFlag) {
+		this.emailFlag = emailFlag;
+	}
+
+
+	public void setUserNameFlag(int userNameFlag) {
+		this.userNameFlag = userNameFlag;
+	}
+
 
 	public String getFirstName() {
 		return firstName;
@@ -139,10 +204,10 @@ public class User {
 	public void setCityOwnerSupplier(String cityOwnerSupplier) {
 		this.cityOwnerSupplier = cityOwnerSupplier;
 	}
+	
 	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
@@ -162,7 +227,6 @@ public class User {
 	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
-
 
 	@Override
 	public String toString() {
@@ -207,7 +271,9 @@ public class User {
 		          }
 		        }
 			
-		        if(flag==true) {return false;}
+		        if (flag) {
+		            return false;
+		        }
 		        else {this.setUserName(uName);
 				return true;}
 			}
@@ -287,15 +353,14 @@ public class User {
 	 public boolean checkCityBranchPosition(String city2) {
 			if(city2.equals("")) {return false;}
 			else if(city2.equals("Jenin")||city2.equals("Nablus")) {
-				this.setCity(city2);
+				this.setCityOwnerSupplier(city2);
 				return true;
 			}else {
 	            return false;
 	        }
 	    }
-
-
-		public boolean checkPhoneNumber(String phoneNumber2) {
+	
+	 public boolean checkPhoneNumber(String phoneNumber2) {
 			if(phoneNumber2.equals("")) {
 				return false;
 				
@@ -306,14 +371,4 @@ public class User {
 				return true;
 			}
 		}
-	
 }
- 
-	
-	
-
-
-
-
-
-

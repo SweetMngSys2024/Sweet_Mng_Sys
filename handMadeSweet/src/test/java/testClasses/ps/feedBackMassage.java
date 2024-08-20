@@ -1,4 +1,4 @@
-package test2.ps;
+package testClasses.ps;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -10,13 +10,13 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class feedBackMassage {
- 
+
 	MyApp sweetApp;
 	FeedBack currentFeedBack;
 	Massage currentMsg;
 
-
- 
+	
+	
 
 public feedBackMassage(MyApp sweetApp) {
 		super();

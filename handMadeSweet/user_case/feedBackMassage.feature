@@ -1,5 +1,6 @@
+
 Feature: Send a feedback or massage 
-  
+ 
 
   Scenario: User wants to set a feedback with vaild inputs
     When user write "Recipe" in type field
@@ -18,7 +19,7 @@ Feature: Send a feedback or massage
     And user enter "it is a very nice product!" in msg field
     And user write "Hot Chocolate" in product or recipe name field
     Then the error "please write correct name!" will displayed on screen
-     
+   
    
    Scenario: User wants to set a feedback with blank type
     When user write "" in type field
@@ -77,8 +78,6 @@ Scenario: User wants to sent a massage with blank msg
     And user write "Owner" in typeOfDest field
     Then the massage will sent to the dst
     
-    
-    
-    
+   
     
     

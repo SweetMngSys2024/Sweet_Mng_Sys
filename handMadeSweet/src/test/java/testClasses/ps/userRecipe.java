@@ -1,5 +1,5 @@
-package test2.ps;
- 
+package testClasses.ps;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -18,7 +18,7 @@ public class userRecipe {
 		newRecipe=new Recipe();
 		
 	}
-	 
+	
 
 @When("the user enter {string} in title field")
 public void theUserEnterInTitleField(String newtitle) {

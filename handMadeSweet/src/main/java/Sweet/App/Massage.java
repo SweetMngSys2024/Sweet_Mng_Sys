@@ -1,6 +1,5 @@
 package Sweet.App;
-
-public class Massage { 
+public class Massage {
 
 	private String uNameSrc;
 	private String uNameDest;
@@ -8,7 +7,7 @@ public class Massage {
 	private String typeOfDest;
 	private String typeOfSrc;
 	
-	 
+	
 	public Massage() {
 	}
 
@@ -64,23 +63,30 @@ public class Massage {
 	}
 
 	public boolean checkuNameDest(String uNameDest2) {
-		if(uNameDest2.equals(""))return false;
-		else if(uNameDest2.equals("Branch 1")||uNameDest2.equals("Branch 2")||uNameDest2.equals("Branch 3")||uNameDest2.equals("Branch 4"))return true;
-		else return false;
+		 return !uNameDest2.equals("") && 
+		           (uNameDest2.equals("Branch 1") || 
+		            uNameDest2.equals("Branch 2") || 
+		            uNameDest2.equals("Branch 3") || 
+		            uNameDest2.equals("Branch 4"));
 		
 	}
 
+	
+	
+	
 	public boolean checkMsg(String msg2) {
-		if(msg2.equals(""))return false;
-		else return false;
+		return !msg2.equals("");
 	}
 
-	public boolean checkDstType(String type2) {
-		if(type2.equals(""))return false;
-		else if(type2.equals("Owner")||type2.equals("Supplier"))return true;
-		else return false;
-	}
 	
+
+	
+	public boolean checkDstType(String type2) {
+		  return !type2.equals("") && 
+		           (type2.equals("Owner") || 
+		            type2.equals("Supplier") || 
+		            type2.equals("User"));
+	}
 
 	
 	

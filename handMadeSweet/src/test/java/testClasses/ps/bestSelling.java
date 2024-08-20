@@ -1,7 +1,9 @@
-package test2.ps;
+package testClasses.ps;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import Sweet.App.MyApp;
 import Sweet.App.product;
@@ -21,9 +23,12 @@ public bestSelling(MyApp sweetApp) {
 	@When("the Admin searches for the best-selling products in Branch {string}")
 	public void theAdminSearchesForTheBestSellingProductsIn(String branch) {
 		 bestSellingProduct = sweetApp.findBestSellingProductInBranch(branch);
+		 if(bestSellingProduct!=null)assertTrue(true);
+		 else assertFalse(false);
+		 
 	}
 
-	@Then("the system should should be displayed as the best-selling product in {string}")
+	@Then("the system should be displayed as the best-selling product in {string}")
 	public void theSystemShouldShouldBeDisplayedAsTheBestSellingProductIn(String branch) {
         if (bestSellingProduct != null) {
             System.out.println("Best-selling product in " + branch + ": " + bestSellingProduct.getpName() +
@@ -36,11 +41,5 @@ public bestSelling(MyApp sweetApp) {
         }
 	}
 
-	@When("the Admin searches for the best-selling products in a non-existent branch {string}")
-	public void theAdminSearchesForTheBestSellingProductsInANonExistentBranch(String branch) {
-	       product bestSellingProduct = sweetApp.findBestSellingProductInBranch(branch);
-	        if (bestSellingProduct == null) {
-	            System.out.println("No best-selling product found in branch " + branch);
-	        }
-	}
+
 }

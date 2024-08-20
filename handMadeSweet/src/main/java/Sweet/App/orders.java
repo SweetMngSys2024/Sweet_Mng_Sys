@@ -4,16 +4,15 @@ public class orders {
 
 	private String productName;
     private int quantity;
-    private double price;
+    private double price; //total price
     private String status;
     private String userName;
     private String branch;
     private String city;
-    private String orderId;
     
     
 	public orders(String productName, int quantity, double price, String status, String userName, String branch,
-			String city,String orderId) {
+			String city) {
 		super();
 		this.productName = productName;
 		this.quantity = quantity;
@@ -22,16 +21,9 @@ public class orders {
 		this.userName = userName;
 		this.branch = branch;
 		this.city = city;
-		this.orderId=orderId;
 	}
 	public orders() {
 		
-	}
-	public String getOrderId() {
-		return orderId;
-	}
-	public void setOrderId(String orderId) {
-		this.orderId = orderId;
 	}
 	public String getUserName() {
 		return userName;
@@ -96,6 +88,5 @@ public class orders {
 		return "orders [productName=" + productName + ", quantity=" + quantity + ", price=" + price + ", status="
 				+ status + ", userName=" + userName + ", branch=" + branch + ", city=" + city + "]";
 	}
-	
 
 }

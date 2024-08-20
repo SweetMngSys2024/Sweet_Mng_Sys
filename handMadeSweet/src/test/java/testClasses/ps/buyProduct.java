@@ -1,4 +1,4 @@
-package test2.ps;
+package testClasses.ps;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -9,7 +9,7 @@ import io.cucumber.java.en.When;
 
 public class buyProduct {
 
-	MyApp sweetApp; 
+	MyApp sweetApp;
 
 
 	public buyProduct(MyApp sweetApp) {
@@ -17,7 +17,7 @@ public class buyProduct {
 		this.sweetApp = sweetApp;
 
 	}
-	 
+	
 
 @When("user enter {string} in search field")
 public void userEnterInSearchField(String search) {
@@ -43,8 +43,8 @@ public void theInformationOfThisProductWillAppear() {
     assertTrue(true);
 }
 
-@Then("the user can buy it if he enter the quantity that he wants or cancle the process {string}")
-public void theUserCanBuyItIfHeEnterTheQuantityThatHeWantsOrCancleTheProcess(String input) { 
+@Then("the user can buy it if he enter the quantity that he wants or Cancel the process {string}")
+public void theUserCanBuyItIfHeEnterTheQuantityThatHeWantsOrCancelTheProcess(String input) { 
    if(sweetApp.buyProduct(input))assertTrue(true);
    else assertFalse(false);
 }

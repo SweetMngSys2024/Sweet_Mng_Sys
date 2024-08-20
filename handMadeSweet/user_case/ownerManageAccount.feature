@@ -46,4 +46,3 @@ Feature: Manage account and update
   When  The Owner  is logged in  
     Then the Owner can delete his account
     
-    

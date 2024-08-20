@@ -1,4 +1,4 @@
-package test2.ps;
+package testClasses.ps;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 import Sweet.App.MyApp;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
- 
+
 public class searchRecipe {
 
 	MyApp sweetApp;
@@ -21,7 +21,7 @@ public void userEnterInTheSearchFiled(String search) {
    if(sweetApp.checkSearchField(search))assertTrue( sweetApp.checkSearchField(search));
    else assertFalse(sweetApp.checkSearchField(search));
 }
- 
+
 @Then("the information of these recipe will displayed")
 public void theInformationOfTheseRecipeWillDisplayed() {
     sweetApp.displayRecipeInfo();

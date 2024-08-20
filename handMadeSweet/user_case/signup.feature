@@ -1,6 +1,6 @@
 
 Feature: Sign up information 
- 
+
 
   Scenario: User enter valid informations
     When user enter "shams" in the first name field
@@ -8,6 +8,7 @@ Feature: Sign up information
     And  user enter "shams123" in the password field
     And  user enter "shams_aziz" in the user name field
     And  user enter "shams123@aziz.com" in the email field
+    And  user enter "Jenin" in the city field
     Then the user registration to the system will be successful
 
     
@@ -17,15 +18,17 @@ Feature: Sign up information
     And  user enter "shams123" in the password field
     And  user enter "shams_aziz" in the user name field
     And  user enter "shams123@aziz.com" in the email field
+    And  user enter "Jenin" in the city field
     Then  an error message should appear "please enter your first name"
 
-     
+    
    Scenario: User left last name field blank
     When user enter "shams" in the first name field
     And  user enter "" in the last name field
     And  user enter "shams123" in the password field
     And  user enter "shams_aziz" in the user name field
     And  user enter "shams123@aziz.com" in the email field
+    And  user enter "Jenin" in the city field
     Then  an error message should appear "please enter your last name"
 
  
@@ -35,6 +38,7 @@ Feature: Sign up information
     And  user enter "shams123" in the password field
     And  user enter "" in the user name field
     And  user enter "shams123@aziz.com" in the email field
+    And  user enter "Jenin" in the city field
     Then  an error message should appear "please enter your user name"
     
       
@@ -44,6 +48,7 @@ Feature: Sign up information
     And  user enter "" in the password field
     And  user enter "shams_aziz" in the user name field
     And  user enter "shams123@aziz.com" in the email field
+    And  user enter "Jenin" in the city field
     Then  an error message should appear "please enter your password"
   
     
@@ -53,6 +58,7 @@ Feature: Sign up information
     And  user enter "shams123" in the password field
     And  user enter "shams_aziz" in the user name field
     And  user enter "" in the email field
+    And  user enter "Jenin" in the city field
     Then  an error message should appear "please enter your email"
      
     
@@ -62,6 +68,7 @@ Feature: Sign up information
     And  user enter "shams123" in the password field
     And  user enter "shams_aziz" in the user name field
     And  user enter "shams123@.com" in the email field
+    And  user enter "Jenin" in the city field
     Then an error message should appear "Please enter your email in the valid format"
     
    
@@ -71,7 +78,19 @@ Feature: Sign up information
     And  user enter "shams123" in the password field
     And  user enter "bayan" in the user name field
     And  user enter "shams123@aziz.com" in the email field
+    And  user enter "Jenin" in the city field
     Then an error message should appear "Please try another username! "
+    
+       
+   Scenario: The user enter invalid city name
+     When user enter "shams" in the first name field
+    And  user enter "aziz" in the last name field
+    And  user enter "shams123" in the password field
+    And  user enter "bayan" in the user name field
+    And  user enter "shams123@aziz.com" in the email field
+    And  user enter "" in the city field
+    Then an error message should appear "Please Don't let the city blank! "
+    
 
 
 

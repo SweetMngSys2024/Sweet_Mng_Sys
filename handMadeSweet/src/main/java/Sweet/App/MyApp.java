@@ -17,9 +17,33 @@ public class MyApp {
 	 public Recipe currentRecipe;
 	 public product currentProduct;
 	 public orders currentOrder;
-	 public boolean applayDiscount;
+	 public boolean applyDiscount;
 	 public int buyProductCase;
 
+	
+	private String jeninCity;
+	private String nablusCity;
+	private String ownerRole;
+	private String supplierRole;
+	private String br4;
+	private String br3;
+	private String br2;
+	private String br1;
+	private String ps;
+	private String jor;
+	private String filterNutFree;
+	private String filterDarkChocolate;
+	private static final String STATUS_ON_PENDING = "on pending";
+        private static final String STATUS_ON_DELIVERED = "on delivered";
+        private static final String STATUS_ON_PROCESSING = "on processing";
+        private static final String STATUS_CANCELLED = "cancelled";
+
+	private String totPriceLable;
+	private String statusLable;
+	private String qntLable;
+	private String userNameLable;
+	private String productNameLable;
+	private String totPriceString;
 	
 	
 	 
@@ -34,41 +58,65 @@ public class MyApp {
 		MyApp.allMassages=new ArrayList<Massage>();
 		MyApp.feedBacks=new ArrayList<FeedBack>();
 		MyApp.materials=new ArrayList<RawMaterial>();
-		applayDiscount=false;
+		applyDiscount=false;
 		buyProductCase=0;
 
 
+		 jeninCity="Jenin";
+		nablusCity="Nablus";
+	        ownerRole="Owner";
+		supplierRole="Supplier";
+
+		br4="Branch 4";
+		br3="Branch 3";
+		br2="Branch 2";
+		br1="Branch 1";
+		 
+		 jor="Jordan";
+		 ps="Palestine";
+
+	       filterNutFree="Nut-Free";
+	       filterDarkChocolate="Half Dark Chocolate";
+
+		totPriceLable="  Tot Price:";
+		 statusLable="  Status:";
+		 qntLable="  Qnt:";
+		 userNameLable="User Name:";
+		 productNameLable="  Product name:";
+
+		 totPriceString=", and the total price for it: ";
+
 		
 		//to add data
-		users.add(new User("bayan", "password123", "User","Jenin"));
-		users.add(new User("ahmad", "password456", "User","Nablus"));
+		users.add(new User("bayan", "password123", "User",jeninCity));
+		users.add(new User("ahmad", "password456", "User",nablusCity));
 		users.add(new User("aya", "password789", "Admin"));
-		users.add(new User("amer", "password987", "Admin")); 
-		users.add(new User("shams","password654", "Owner", "Branch 3", "Jenin", "shams@example.com", "123-456-7890", "Jordan", "1985-02-20"));
-        users.add(new User("raghad", "password321", "Owner", "Branch 2", "Nablus", "raghad@example.com", "234-567-8901", "Palestine", "1987-04-15"));
-        users.add(new User("rama", "password675", "Suppliers", "Branch 1", "Nablus",  "rama@example.com", "345-678-9012", "Jordan", "1990-06-30"));
-        users.add(new User("amal", "password184", "Suppliers", "Branch 4", "Jenin", "amal@example.com", "456-789-0123", "Palestine", "1992-08-25"));
+		users.add(new User("amer", "password987", "Admin"));
+		users.add(new User("shams","password654", ownerRole, br3, jeninCity, "shams@example.com", "123-456-7890", jor, "1985-02-20"));
+        users.add(new User("raghad", "password321", ownerRole, br2, nablusCity, "raghad@example.com", "234-567-8901", ps, "1987-04-15"));
+        users.add(new User("rama", "password675", supplierRole, br1, nablusCity,  "rama@example.com", "345-678-9012", jor, "1990-06-30"));
+        users.add(new User("amal", "password184", supplierRole, br4, jeninCity, "amal@example.com", "456-789-0123", ps, "1992-08-25"));
 
-        users.add(new User("amal_ahmad", "password1234", "Suppliers", "Branch 3", "Jenin", "amal_ahmad@example.com", "567-890-1234", "Jordan", "1995-10-15"));
-        users.add(new User("shams_imad", "password5678", "Owner", "Branch 1", "Nablus", "shams_imad@example.com", "678-901-2345", "Palestine", "1986-11-05"));
-        users.add(new User("raghad_jamal", "password910", "Owner", "Branch 4", "Jenin", "raghad_jamal@example.com", "789-012-3456", "Jordan", "1988-12-01"));
-        users.add(new User("rama_hasan", "password11", "Suppliers", "Branch 2", "Nablus", "rama_hasan@example.com", "890-123-4567", "Palestine", "1991-07-20"));
+        users.add(new User("amal_ahmad", "password1234", supplierRole, br3, jeninCity, "amal_ahmad@example.com", "567-890-1234", jor, "1995-10-15"));
+        users.add(new User("shams_imad", "password5678", ownerRole, br1, nablusCity, "shams_imad@example.com", "678-901-2345", ps, "1986-11-05"));
+        users.add(new User("raghad_jamal", "password910", ownerRole, br4, jeninCity, "raghad_jamal@example.com", "789-012-3456", jor, "1988-12-01"));
+        users.add(new User("rama_hasan", "password11", supplierRole, br2, nablusCity, "rama_hasan@example.com", "890-123-4567", ps, "1991-07-20"));
 	        
-    	recipes.add(new Recipe("Chocolate Cake", "Delicious and moist chocolate cake", "Alice", "Flour, Cocoa, Sugar, Eggs, Butter", "1 hour","Nut-Free"));
+		recipes.add(new Recipe("Chocolate Cake", "Delicious and moist chocolate cake", "Alice", "Flour, Cocoa, Sugar, Eggs, Butter", "1 hour",filterNutFree));
 		recipes.add(new Recipe("Vanilla Ice Cream", "Creamy vanilla ice cream", "Bob", "Milk, Cream, Sugar, Vanilla", "4 hours","Egg-Free"));
 		recipes.add(new Recipe("Strawberry Shortcake", "Classic strawberry shortcake", "Carol", "Flour, Sugar, Strawberries, Cream", "1.5 hours","Vegan"));
 		recipes.add(new Recipe("Lemon Tart", "Tangy and sweet lemon tart", "Dave", "Flour, Butter, Sugar, Lemons, Eggs", "2 hours","Gluten-Free"));
-		recipes.add(new Recipe("Brownies", "Rich and fudgy brownies", "Eve", "Flour, Cocoa, Sugar, Eggs, Butter, Chocolate", "45 minutes","Nut-Free"));
+		recipes.add(new Recipe("Brownies", "Rich and fudgy brownies", "Eve", "Flour, Cocoa, Sugar, Eggs, Butter, Chocolate", "45 minutes",filterNutFree));
     
-		products.add(new product("Half Dark Chocolate", "Rich dark chocolate with 50% cocoa", 5.99, 100, 20, 0.1, "Chocolate Supplier A","Branch 1"));
-        products.add(new product("Dark Chocolate", "Premium dark chocolate with 85% cocoa", 6.99, 50, 30, 0.15, "Chocolate Supplier B","Branch 1"));
-        products.add(new product("White Chocolate", "Creamy white chocolate with vanilla", 4.99, 2, 15, 0.05, "Chocolate Supplier C","Branch 2"));
+		products.add(new product(filterDarkChocolate, "Rich dark chocolate with 50% cocoa", 5.99, 100, 20, 0.1, "Chocolate Supplier A",br3));
+        products.add(new product("Dark Chocolate", "Premium dark chocolate with 85% cocoa", 6.99, 50, 30, 0.15, "Chocolate Supplier B",br1));
+        products.add(new product("White Chocolate", "Creamy white chocolate with vanilla", 4.99, 2, 15, 0.05, "Chocolate Supplier C",br2));
         
         
-        sellers.add(new orders("Half Dark Chocolate", 2, 11.98, "on pending", "bayan", "Branch 1", "Nablus","98765"));
-        sellers.add(new orders("White Chocolate", 1, 4.99, "on deliverd", "ahmad", "Branch 2", "Nablus","98766"));
-        sellers.add(new orders("Dark Chocolate", 2, 13.98, "on processing", "aya", "Branch 3", "Jenin","98767"));
-        sellers.add(new orders("Half Dark Chocolate", 3, 17.97, "cancelled", "amer", "Branch 4", "Jenin","98768"));
+        sellers.add(new orders(filterDarkChocolate, 2, 11.98, STATUS_ON_PENDING, "bayan", br1, nablusCity));
+        sellers.add(new orders("White Chocolate", 1, 4.99, STATUS_ON_DELIVERED, "ahmad", br2, nablusCity));
+        sellers.add(new orders("Dark Chocolate", 2, 13.98, STATUS_ON_PROCESSING, "aya", br1, nablusCity));
+        sellers.add(new orders(filterDarkChocolate, 3, 17.97, STATUS_CANCELLED, "amer", br3, jeninCity));
        
         
         
@@ -171,7 +219,7 @@ public class MyApp {
 
 	public boolean checkSearchField(String search) {
 
-		if(search=="")return false;
+		if(search.equals(""))return false;
 		else {
 			 ArrayList<Recipe> recipes = MyApp.getRecipes();
 			    for (Recipe recipe : recipes) {
@@ -207,7 +255,7 @@ public class MyApp {
 	public void showAllFilterdRecipes(String filterOption) {
 		String filter;
 		if(filterOption.equals("1"))filter="Egg-Free";
-		else if(filterOption.equals("2"))filter="Nut-Free";
+		else if(filterOption.equals("2"))filter=filterNutFree;
 		else if(filterOption.equals("3"))filter="Gluten-Free";
 		else filter="Vegan";
 		ArrayList <Recipe> myFilterdRecipes=MyApp.getRecipes();
@@ -216,7 +264,7 @@ public class MyApp {
 			{
 				this.currentRecipe=myRecipe;
 				displayRecipeInfo();
-				//System.out.println("*******************************************************");
+				System.out.println("*************************");
 			}
 		}
 		
@@ -256,8 +304,7 @@ public class MyApp {
 		System.out.println("Description: "+currentProduct.getDescription());
 		System.out.println("Discount: "+currentProduct.getDiscount());
 		System.out.println("Supplier name: "+currentProduct.getSupplier());	
-		//System.out.println("City: ");		
-		//System.out.println("Branch name: "+currentProduct.getSupplier());		
+		System.out.println("Branch name: "+currentProduct.getBranchName());		
 	}
 
 
@@ -283,7 +330,7 @@ public class MyApp {
 		    	buyProductCase=4; 
 		        return false;
 		    }
-		    setOrderDetials(qnt);
+		    setOrderDetails(qnt);
 		    currentProduct.setQuantity(currentProduct.getQuantity()-qnt);
 			currentProduct.setSalesCount(currentProduct.getSalesCount()+currentOrder.getQuantity());
 			MyApp.sellers.add(currentOrder);
@@ -292,7 +339,7 @@ public class MyApp {
 	}
 
 
-	private void setOrderDetials(int qnt2) {
+	private void setOrderDetails(int qnt2) {
 		currentOrder.setProductName(currentProduct.getpName());
 		currentOrder.setQuantity(qnt2);
 		currentOrder.setPrice((qnt2*currentProduct.getPrice())-(qnt2*currentProduct.getDiscount()*currentProduct.getPrice()));
@@ -311,7 +358,7 @@ public class MyApp {
 	    currentMsg.setTypeOfSrc(this.currentUser.getRole());
 	    currentMsg.setuNameSrc(this.currentUser.getUserName());
 	    MyApp.allMassages.add(currentMsg);
-	    this.currentUser.userSentMsgs.add(currentMsg);
+	    this.currentUser.getUserSentMsgs().add(currentMsg);
 
 	    for (User user : MyApp.getUsers()) {
 	        String userBranch = user.getBranch();
@@ -319,14 +366,16 @@ public class MyApp {
 	        
 	        if (currentMsg.getuNameDest() != null && userBranch != null && userBranch.equals(currentMsg.getuNameDest()) &&
 	            currentMsg.getTypeOfDest() != null && userRole != null && userRole.equals(currentMsg.getTypeOfDest())) {
-	            user.userRecievedMsgs.add(currentMsg);
+	            user.getUserRecievedMsgs().add(currentMsg);
 	            break;
 	        }
+    		
+
 	    }
 	    
 	   
 	 // Print the arrays
-	    System.out.println("User Sent Messages:");
+	/*    System.out.println("User Sent Messages:");
 	  
 	    for (Massage msg : this.currentUser.userSentMsgs) {
             System.out.println(msg);
@@ -339,7 +388,7 @@ public class MyApp {
 	            System.out.println(msg);
 	            System.out.println(user.getUserName());
 	        }
-	    }    
+	    }  */  
 	  
 	}
 	
@@ -347,10 +396,10 @@ public class MyApp {
 
 	  
     public boolean VerifyBranchInCity(String branch, String city) {
-    	if (city.equals("Nablus")) {
-            return branch.equals("Branch 1") || branch.equals("Branch 2");
-        } else if (city.equals("Jenin")) {
-            return branch.equals("Branch 3") || branch.equals("Branch 4");
+    	if (city.equals(nablusCity)) {
+            return branch.equals(br1) || branch.equals(br2);
+        } else if (city.equals(jeninCity)) {
+            return branch.equals(br3) || branch.equals(br4);
         }
         return false;
     	
@@ -359,10 +408,10 @@ public class MyApp {
     
     public product findBestSellingProductInBranch(String branch) {
    	 if (branch.equals("")) {
-   		// this.printStm("Error: Branch cannot be empty.");
+   		 this.printStm("Error: Branch cannot be empty.");
    		 return null;
    		 }
-   	 else if(branch.equals("Branch 1")||branch.equals("Branch 2")||branch.equals("Branch 3")||branch.equals("Branch 4")) {    
+   	 else if(branch.equals(br1)||branch.equals(br2)||branch.equals(br3)||branch.equals(br4)) {    
      product bestSellingProduct = null;
      int maxSalesCount = 0;
 
@@ -375,7 +424,7 @@ public class MyApp {
 
      return bestSellingProduct;}
    
-       else return null;
+       else {  this.printStm("Error: Branch doesn't exist."); return null;}
    }
 
     
@@ -448,7 +497,6 @@ public class MyApp {
 	        MyApp.recipes.remove(recipeToRemove);
 	        return true;
 	    } else {
-	        printStm("The specified recipe does not exist");
 	        return false;
 	    }
 	}
@@ -534,7 +582,7 @@ public class MyApp {
     
 
 	public boolean deleteFeedBack(String username, String product) {
-		if(users.isEmpty()|| products.isEmpty()||recipes.isEmpty()) {
+		if(users.isEmpty()|| products.isEmpty()||recipes.isEmpty()||feedBacks.isEmpty()) {
 			System.out.println("No FeedBack found.");
 			return false;
 		}
@@ -663,7 +711,7 @@ public class MyApp {
 		if(sellers.isEmpty())return false;
 		for(orders order: sellers) 
 		{
-			printStm("User Name:"+order.getUserName()+" Tot Price:"+order.getPrice());
+			printStm(userNameLable+order.getUserName()+totPriceLable+order.getPrice()+productNameLable+order.getProductName()+qntLable+order.getQuantity()+statusLable+order.getStatus());
 		}return true;
 	}
 
@@ -672,7 +720,7 @@ public class MyApp {
 		for(orders order: sellers) 
 		{
 			if(order.getBranch().equals(branch2)) {
-			printStm("User Name:"+order.getUserName()+" Tot Price:"+order.getPrice());}
+			printStm(userNameLable+order.getUserName()+totPriceLable+order.getPrice()+productNameLable+order.getProductName()+qntLable+order.getQuantity()+statusLable+order.getStatus());}
 		}return true;
 	}
 
@@ -681,16 +729,17 @@ public class MyApp {
 		for(orders order: sellers) 
 		{
 			if(order.getCity().equals(city2)) {
-			printStm("User Name:"+order.getUserName()+" Tot Price:"+order.getPrice());}
+				printStm(userNameLable+order.getUserName()+totPriceLable+order.getPrice()+productNameLable+order.getProductName()+qntLable+order.getQuantity()+statusLable+order.getStatus());}
+
 		}return true;
 	}
 
 	public User verifyIdentity(String role1, String userName1) {
 		if(role1.equals(""))return null;
-		else if(role1.equals("Owner")||role1.equals("Supplier")) 
+		else if(role1.equals(ownerRole)||role1.equals(supplierRole)) 
 		{
 			for(User user: users) {
-				if(user.getUserName().equals(userName1)&&(user.getRole().equals("Owner")||user.getRole().equals("Supplier")))return user;
+				if(user.getUserName().equals(userName1)&&(user.getRole().equals(ownerRole)||user.getRole().equals(supplierRole)))return user;
 			}
 			
 		}
@@ -749,7 +798,7 @@ public class MyApp {
 		if(supplierName.equals("")) return false;
 		for(User user: users) 
 		{
-			if(user.getUserName().equals(supplierName)&&user.getRole().equals("Supplier"))return true;
+			if(user.getUserName().equals(supplierName)&&user.getRole().equals(supplierRole))return true;
 		}
 		return false;
 	}
@@ -763,48 +812,52 @@ public class MyApp {
 		}return true;
 	}
 
-	public void applayDiscount(double minPrice, double discount,String branch) {
-		this.applayDiscount=true;
+	public void applyDiscountToProduct(double minPrice, double discount,String branch) {
+		this.applyDiscount=true;
 		for(product prod: products) 
 		{
 			if(prod.getPrice()>=minPrice && prod.getBranchName().equals(branch) && prod.getDiscount()<discount)prod.setDiscount(discount);
 		}
 	}
 
+	public boolean checkStatus(String status){
+
+		return status.equals(STATUS_ON_PENDING)||status.equals(STATUS_ON_DELIVERED)||status.equals(STATUS_ON_PROCESSING)||status.equals(STATUS_CANCELLED);
+	}
+
+	public void processOrderByStatus(orders order, String status)
+	{
+		String orderStatus=order.getStatus().toLowerCase();
+		if(orderStatus.equals(STATUS_ON_PENDING)&&status.equals(STATUS_ON_PENDING)){
+			 handlePendingOrder(order);
+	                 order.setStatus(STATUS_ON_PROCESSING);
+		}
+		else if(orderStatus.equals(STATUS_ON_PROCESSING)&&status.equals(STATUS_ON_PROCESSING)){
+			 handleProcessingOrder(order);
+	                 order.setStatus(STATUS_ON_DELIVERED);
+		}
+
+		else if(orderStatus.equals(STATUS_ON_DELIVERED)&&status.equals(STATUS_ON_DELIVERED)){
+			 handleDeliveredOrder(order);
+	                order.setStatus(STATUS_CANCELLED);
+		}
+		else if(orderStatus.equals(STATUS_CANCELLED)&&status.equals(STATUS_CANCELLED)){
+			 handleCancelledOrder(order);
+		}    
+	              
+	          return;
+	}
+
+	
 	public boolean handleOrderStatus(String status2, String branch) {
 		String status=status2.toLowerCase();
 		
-		if(!(status=="on pending"||status=="on delivered"||status=="on processing"||status=="cancelled")) return false;
+		if(!checkStatus(status)) return false;
 		
 
 	    for (orders order : sellers) {
 	        if (order.getBranch().equalsIgnoreCase(branch)) {
-	            switch (order.getStatus().toLowerCase()) {
-	                case "on pending":
-	                    if (status.equals("on pending")) {
-	                        handlePendingOrder(order);
-	                        order.setStatus("on processing");
-	                    }
-	                    break;
-	                case "on processing":
-	                    if (status.equals("on processing")) {
-	                        handleProcessingOrder(order);
-	                        order.setStatus("on delivered");
-	                    }
-	                    break;
-	                case "on delivered":
-	                    if (status.equals("on delivered")) {
-	                        handleDeliveredOrder(order);
-	                        order.setStatus("cancelled");
-	                    }
-	                    break;
-	                case "cancelled":
-	                    if (status.equals("cancelled")) {
-	                        handleCancelledOrder(order);
-	                        // No further status updates needed for cancelled orders
-	                    }
-	                    break;
-	            }
+	        processOrderByStatus(order, status);
 	        }
 	    }
 	    return true;
@@ -812,19 +865,19 @@ public class MyApp {
 	}
 	  
 		private void handlePendingOrder(orders order) {
-	        printStm("Processing pending order for " + order.getUserName());
+	        printStm("Processing pending order for " + order.getUserName()+totPriceString+order.getPrice());
 	    }
 
 	    private void handleDeliveredOrder(orders order) {
-	    	printStm("Order delivered to " + order.getUserName());
+	    	printStm("Order delivered to " + order.getUserName()+totPriceString+order.getPrice());
 	    }
 
 	    private void handleProcessingOrder(orders order) {
-	    	printStm("Order is being processed for " + order.getUserName());
+	    	printStm("Order is being processed for " + order.getUserName()+totPriceString+order.getPrice());
 	    }
 
 	    private void handleCancelledOrder(orders order) {
-	    	printStm("Order cancelled for " + order.getUserName());
+	    	printStm("Order cancelled for " + order.getUserName()+totPriceString+order.getPrice());
 	    }
 	    
 	    
@@ -841,7 +894,7 @@ public class MyApp {
 			currentMsg.setTypeOfSrc(this.currentUser.getRole());
 		    currentMsg.setuNameSrc(this.currentUser.getUserName());
 		    MyApp.allMassages.add(currentMsg);
-		    this.currentUser.userSentMsgs.add(currentMsg);
+		    this.currentUser.getUserSentMsgs().add(currentMsg);
 
 		    for (User user : MyApp.getUsers()) {
 		        String userName = user.getUserName();
@@ -849,38 +902,41 @@ public class MyApp {
 		        
 		        if (currentMsg.getuNameDest() != null && userName != null && userName.equals(currentMsg.getuNameDest()) &&
 		            currentMsg.getTypeOfDest() != null && userRole != null && userRole.equals(currentMsg.getTypeOfDest())) {
-		            user.userRecievedMsgs.add(currentMsg);
+		            user.getUserRecievedMsgs().add(currentMsg);
 		            break;
 		        }
 		    }
 		    
-		    System.out.println("SSSSHHHHHHHHAAMMMMMMMMMMMMDDDDDDDDDDD");
+	/*	    System.out.println("userRecievedMsgs");
 		    for (User user : MyApp.getUsers()) {
 		    	if(user.userRecievedMsgs!=null) 
 		        for (Massage msg : user.userRecievedMsgs) {
-		            System.out.println(msg);
-		            System.out.println(user.getUserName());
+		            System.out.println(msg.toString());
 		        }
 		    }   
 		    
+		    
+		    System.out.println("userSentMsgs");
+		    for (User user : MyApp.getUsers()) {
+		    	if(user.userSentMsgs!=null) 
+		        for (Massage msg : user.userSentMsgs) {
+		            System.out.println(msg.toString());
+		        }
+		    }   */
+		    
 		}
-
- 
-	    
-	    //Bayan
-	    
-	    
-	    
-	    
-
+		
+		
+		
+		/////////////////////////////////////////////////////////////////
 		public String getBranchOwner(String owner) {
 			 if (owner.equals("")) {
 	    		 this.printStm("Error: owner cannot be empty.");
 	    		 }
 			 for (User user : users) {
-			        if (user.getRole().equals("Owner")|| user.getRole().equals("Suppliers")){
+			        if (user.getRole().equals(ownerRole)|| user.getRole().equals(supplierRole)){
 			        	 if(user.getUserName().equals(owner)){
-			   		 System.out.println("the branch " + owner + " is " + user.getBranch());
+			   //		 System.out.println("the branch owner is: " + owner + " And the branch name is:  " + user.getBranch());
 
 			            return user.getBranch();
 			        }
@@ -898,6 +954,7 @@ public class MyApp {
 			int totalSales = 0;
 			for (product prod : products) 
 				 if (prod.getBranchName().equals(branch)){
+					 System.out.println("Product name= " + prod.getpName() + " ,and the sales amount is: " + prod.getSalesCount());
 					 totalSales +=prod.getSalesCount();
 				 }
 			System.out.println("Total Sales for " + branch + " is " + totalSales);
@@ -908,11 +965,12 @@ public class MyApp {
 		public double ProfitsOfBranch(String branch) {
 		
 			double totalProfits = 0.0;
-	        for (orders order : this.sellers)
+	        for (orders order : MyApp.sellers)
 	        	 if (order.getBranch().equals(branch)){
+	            System.out.println("Order's product name= " + order.getProductName() + " ,and the total price= " + order.getPrice());
 	            totalProfits += order.getPrice();
 	        }
-	        System.out.println("Total Profit for " + branch + " is " + totalProfits);
+	        System.out.println("\n\nTotal Profit for " + branch + " is " + totalProfits);
 	        return totalProfits;
 		}
 
@@ -942,11 +1000,12 @@ public class MyApp {
 
 		public double ProfitsOfProduct(String product,String productBranchName) {
 			double Profits = 0.0;
-	        for (orders order : this.sellers)
+	        for (orders order : MyApp.sellers) {
 	        	 if (order.getBranch().equals(productBranchName)&&order.getProductName().equals(product)){
 	           Profits += order.getPrice();
 	        }
-	        System.out.println(" Profit for " + product + " in "+ productBranchName+ " is " + Profits);
+	        	 }
+	        System.out.println("\n\nProfit for " + product + " in "+ productBranchName+ " is " + Profits);
 	        return Profits;
 		}
 
@@ -989,11 +1048,6 @@ public class MyApp {
 		}
 
 	
-
-	
-			
-		
-
 		public void updateOwnerOrSupplierInfo(User currentUser2) {
 			 for (User user : MyApp.users) {
 		          if(user.getUserName().equals(currentUser2.getUserName())) 
@@ -1012,28 +1066,6 @@ public class MyApp {
 		
 		
 		
-		
-		}
-
-	
-
-		
-		
-		
-
-		
-			
-		
-
-		
-
-
-
-
-
-	
-
-		
-		
 
 	 
+}

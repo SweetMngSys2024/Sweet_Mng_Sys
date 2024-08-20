@@ -1,4 +1,4 @@
-package test2.ps;
+package testClasses.ps;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
@@ -7,7 +7,7 @@ import Sweet.App.MyApp;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class filterRecipe { 
+public class filterRecipe {
 	
 	MyApp sweetApp;
 	String filterOption;
@@ -17,7 +17,7 @@ public class filterRecipe {
 		super();
 		this.sweetApp = sweetApp;
 	}
- 
+
 	@When("user enter {string}")
 	public void userEnter(String choice) {
 	   if(sweetApp.checkFilterOption(choice)) {filterOption=choice; assertTrue(true);}

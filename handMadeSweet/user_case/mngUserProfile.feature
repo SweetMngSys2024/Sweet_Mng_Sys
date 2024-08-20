@@ -1,7 +1,7 @@
 
 Feature: manage user account
 
-  Scenario: View user profile information 
+  Scenario: View user profile information
     Given that the user role is "User"
     When  the user is logged in
     Then the user can see his information 
@@ -19,7 +19,7 @@ Feature: manage user account
 
   Scenario Outline: Edit user profile information
     Given  that the user role is "User"
-    When the user is logged in 
+    When the user is logged in
     And the user enter '<userName>' in user name field
     And the user enter '<password>' in password field
     And the user enter '<email>' in email field
