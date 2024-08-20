@@ -42,4 +42,4 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: mvn -B jacoco:prepare-agent verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar jacoco:report -Dsonar.projectKey=SweetMngSys2024_Sweet_Mng_Sys -Dsonar.exclusions=**/src/main/java/org/Main.java,**/src/test/java/test2/ps/mngAdmin.java,**/src/test/java/test2/ps/mngFeedBack.java,**/src/test/java/test2/ps/ownerMonetorSalesTest.javaو**/src/test/java/test2/ps/trackOrders.java
+        run: mvn -B jacoco:prepare-agent verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar jacoco:report -Dsonar.projectKey=SweetMngSys2024_Sweet_Mng_Sys -Dsonar.exclusions=**/src/main/java/org/Main.java,**/src/test/java/test2/ps/mngAdmin.java,**/src/test/java/test2/ps/mngFeedBack.java,**/src/test/java/test2/ps/ownerMonetorSalesTest.java,**/src/test/java/test2/ps/trackOrders.java
