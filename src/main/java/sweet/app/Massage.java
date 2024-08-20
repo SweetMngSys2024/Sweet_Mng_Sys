@@ -13,12 +13,7 @@ public class Massage {
 	}
 
 	public Massage(String uNameSrc, String uNameDest, String mgs, String typeOfDest, String typeOfSrc) {
-		super();
-		this.uNameSrc = uNameSrc;
-		this.uNameDest = uNameDest;
-		this.mgs = mgs;
-		this.typeOfDest = typeOfDest;
-		this.typeOfSrc = typeOfSrc;
+		super(); this.uNameSrc = uNameSrc; this.uNameDest = uNameDest; this.mgs = mgs; this.typeOfDest = typeOfDest; this.typeOfSrc = typeOfSrc;
 	}
 
 
@@ -26,21 +21,15 @@ public class Massage {
 
 	@Override
 	public String toString() {
-		return "Massage [uNameSrc=" + uNameSrc + ", uNameDest=" + uNameDest + ", mgs=" + mgs + ", typeOfDest="
-				+ typeOfDest + ", typeOfSrc=" + typeOfSrc + "]";
+		return "Massage [uNameSrc=" + uNameSrc + ", uNameDest=" + uNameDest + ", mgs=" + mgs + ", typeOfDest=" + typeOfDest + ", typeOfSrc=" + typeOfSrc + "]";
 	}
 
-	public String getTypeOfSrc() {
-		return typeOfSrc;
-	}
+	public String getTypeOfSrc() {return typeOfSrc;}
 
-	public void setTypeOfSrc(String typeOfSrc) {
-		this.typeOfSrc = typeOfSrc;
-	}
+	public void setTypeOfSrc(String typeOfSrc) {	this.typeOfSrc = typeOfSrc;}
 
-	public String getuNameSrc() {
-		return uNameSrc;
-	}
+	public String getuNameSrc() {return uNameSrc;}
+	
 	public void setuNameSrc(String uNameSrc) {
 		this.uNameSrc = uNameSrc;
 	}
@@ -50,9 +39,8 @@ public class Massage {
 	public void setuNameDest(String uNameDest) {
 		this.uNameDest = uNameDest;
 	}
-	public String getMgs() {
-		return mgs;
-	}
+	public String getMgs() {return mgs;}
+	
 	public void setMgs(String mgs) {
 		this.mgs = mgs;
 	}
@@ -63,9 +51,7 @@ public class Massage {
 		this.typeOfDest = typeOfDest;
 	}
 
-	public boolean checkuNameDest(String uNameDest2) {
-		return (uNameDest2.equals("Branch 1")||uNameDest2.equals("Branch 2")||uNameDest2.equals("Branch 3")||uNameDest2.equals("Branch 4"));	
-	}
+	public boolean checkuNameDest(String uNameDest2) {return (uNameDest2.equals("Branch 1")||uNameDest2.equals("Branch 2")||uNameDest2.equals("Branch 3")||uNameDest2.equals("Branch 4"));	}
 
 	public boolean checkMsg(String msg2) {
 		return (!msg2.equals(""));
