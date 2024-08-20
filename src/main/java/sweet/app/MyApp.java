@@ -6,13 +6,13 @@ import java.util.stream.Collectors;
 
 public class MyApp {
 
-	 static public ArrayList<User> users = new ArrayList<>();
-	 static public ArrayList<Recipe> recipes = new ArrayList<>();
-	 static public ArrayList<orders> sellers = new ArrayList<>();
-	 static public ArrayList<product> products = new ArrayList<>();
-	 static public ArrayList<Massage> allMassages = new ArrayList<>();
-	 static public ArrayList<FeedBack> feedBacks = new ArrayList<>();
-	 static public ArrayList<RawMaterial> materials = new ArrayList<>();
+	 static public ArrayList<User> users;
+	 static public ArrayList<Recipe> recipes;
+	 static public ArrayList<orders> sellers;
+	 static public ArrayList<product> products;
+	 static public ArrayList<Massage> allMassages;
+	 static public ArrayList<FeedBack> feedBacks;
+	 static public ArrayList<RawMaterial> materials;
 	 public User currentUser;
 	 public Recipe currentRecipe;
 	 public product currentProduct;
