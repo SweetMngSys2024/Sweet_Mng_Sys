@@ -12,29 +12,17 @@ public class RawMaterial {
         this.price = price;
     }
  
-    public String getMaterialName() {
-        return materialName;
-    }
+    public String getMaterialName() {  return materialName; }
 
-    public void setMaterialName(String materialName) {
-        this.materialName = materialName;
-    }
+    public void setMaterialName(String materialName) {   this.materialName = materialName; }
 
-    public String getSupplierUsername() {
-        return supplierUsername;
-    }
+    public String getSupplierUsername() {    return supplierUsername;  }
 
-    public void setSupplierUsername(String supplierUsername) {
-        this.supplierUsername = supplierUsername;
-    }
+    public void setSupplierUsername(String supplierUsername) {  this.supplierUsername = supplierUsername; }
 
-    public double getPrice() {  
-        return price;
-    }
+    public double getPrice() {   return price; }
 
-    public void setPrice(double price) {  
-        this.price = price;
-    }
+    public void setPrice(double price) {  this.price = price; }
 
     @Override
     public String toString() {
