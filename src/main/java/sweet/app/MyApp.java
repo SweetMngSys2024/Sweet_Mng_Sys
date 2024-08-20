@@ -45,19 +45,15 @@ public class MyApp {
 	private String productNameLable;
 	private String totPriceString;
 	
-	  static {
-       
-		users=new ArrayList<User>();
+	  public MyApp() {
+
+		 users=new ArrayList<User>();
 		recipes=new ArrayList<Recipe>();
 		sellers=new ArrayList<orders>();
 		products=new ArrayList<product>();
 		allMassages=new ArrayList<Massage>();
 		feedBacks=new ArrayList<FeedBack>();
 		materials=new ArrayList<RawMaterial>();
-    }
-	 
-	 public MyApp() {
-
 		 
 		this.currentUser=new User();
 		this.currentProduct=new product();
