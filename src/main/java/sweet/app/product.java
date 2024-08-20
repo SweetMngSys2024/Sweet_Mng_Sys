@@ -1,7 +1,10 @@
 package sweet.app;
+import java.util.logging.Logger;
 
 public class product {
-	 
+
+	 private static final Logger logger = Logger.getLogger(MyApp.class.getName());
+	
 	 private String pName;
 	 private String description;
 	 private double price;
@@ -140,13 +143,13 @@ public class product {
 		}
 	}
 	static public double checkMinPrice(String price2) {
-		if(price2.equals("")) { System.out.println("Don't let price field empty!"); return -1;}
+		if(price2.equals("")) { logger.info("Don't let price field empty!"); return -1;}
 		else {
 			 try {
 			        double p=Double.parseDouble(price2);
 			        return p;
 			    } catch (NumberFormatException e) {
-			    	System.out.println("Enter a number in the price field!");
+			    	logger.info("Enter a number in the price field!");
 			        return -1;
 			    }
 		}
@@ -154,15 +157,15 @@ public class product {
 	public static double checkDiscount(String discount2) {
 		if(discount2.equals("")) 
 		{
-			System.out.println("Don't let discount field empty!");
+			logger.info("Don't let discount field empty!");
 			return -1;}
 		else {
 			double p;
 			 try {
 			        p=Double.parseDouble(discount2);
-			        if(p<0 || p>1) {System.out.println("Don't enter more than 100%(=1) or more or negative percentage!"); return -1;}
+			        if(p<0 || p>1) {logger.info("Don't enter more than 100%(=1) or more or negative percentage!"); return -1;}
 			    } catch (NumberFormatException e) {
-			    	System.out.println("Enter a number in the discount field!");
+			    	logger.info("Enter a number in the discount field!");
 			        return -1;
 			    }
 			 return p;
