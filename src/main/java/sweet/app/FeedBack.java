@@ -57,18 +57,15 @@ public class FeedBack {
 	}
 	
 	public  boolean checkType(String type) {
-		if(type.equals(""))return false;
-		else if(type.equalsIgnoreCase("Recipe")||type.equalsIgnoreCase("Product")) {return true;}
-		else return false;
+	   return type.equalsIgnoreCase("Recipe")||type.equalsIgnoreCase("Product");
 	}
+	
 	public  boolean checkMsg(String msg) {
-		if(msg.equals(""))return false;
-		else return true;
+		return (!msg.equals(""));
 	}
 
 	public boolean checkNullOrEmpty(String str){
-		 if (str == null || str.equals("")) return false;
-		return true;
+		 return (!(str == null || str.equals("")));
 	}
 
 	public boolean checkProductName(String pName){
@@ -92,18 +89,21 @@ public class FeedBack {
 	}
 	
 	public  boolean checkName(String name) {
+
+		boolean existFlag=false;
+		
 		 if(!(checkNullOrEmpty(name)&&checkNullOrEmpty(type)))return false;
 
 		    if (type.equalsIgnoreCase("Product")) {
-			    return checkProductName(name);
+			    existFlag= checkProductName(name);
 		       }
 		    else if (type.equalsIgnoreCase("Recipe")) {
-		       return checkRecipeName(name);
+		        existFlag= checkRecipeName(name);
 		    }
 		    else {
-		        return false;
+		       existFlag= false;
 		    }
-	
+	return existFlag;
 	}
 
 	
