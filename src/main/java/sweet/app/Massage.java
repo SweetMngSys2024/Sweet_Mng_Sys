@@ -64,21 +64,15 @@ public class Massage {
 	}
 
 	public boolean checkuNameDest(String uNameDest2) {
-		if(uNameDest2.equals(""))return false;
-		else if(uNameDest2.equals("Branch 1")||uNameDest2.equals("Branch 2")||uNameDest2.equals("Branch 3")||uNameDest2.equals("Branch 4"))return true;
-		else return false;
-		
+		return (uNameDest2.equals("Branch 1")||uNameDest2.equals("Branch 2")||uNameDest2.equals("Branch 3")||uNameDest2.equals("Branch 4"));	
 	}
 
 	public boolean checkMsg(String msg2) {
-		if(msg2.equals(""))return false;
-		else return true;
+		return (!msg2.equals(""));
 	}
 
 	public boolean checkDstType(String type2) {
-		if(type2.equals(""))return false;
-		else if(type2.equals("Owner")||type2.equals("Supplier")||type2.equals("User"))return true;
-		else return false;
+		return (type2.equals("Owner")||type2.equals("Supplier")||type2.equals("User"));
 	}
 
 	
