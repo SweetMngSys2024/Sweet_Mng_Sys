@@ -6,13 +6,13 @@ import java.util.stream.Collectors;
 
 public class MyApp {
 
-	 static public ArrayList<User> users;
-	 static public ArrayList<Recipe> recipes;
-	 static public ArrayList<orders> sellers;
-	 static public ArrayList<product> products;
-	 static public ArrayList<Massage> allMassages;
-	 static public ArrayList<FeedBack> feedBacks;
-	 static public ArrayList<RawMaterial> materials;
+	 static public ArrayList<User> users=new ArrayList<User>();
+	 static public ArrayList<Recipe> recipes=new ArrayList<Recipe>();
+	 static public ArrayList<orders> sellers=new ArrayList<orders>();
+	 static public ArrayList<product> products=new ArrayList<product>();
+	 static public ArrayList<Massage> allMassages=new ArrayList<Massage>();
+	 static public ArrayList<FeedBack> feedBacks=new ArrayList<FeedBack>();
+	 static public ArrayList<RawMaterial> materials=new ArrayList<RawMaterial>();
 	 public User currentUser;
 	 public Recipe currentRecipe;
 	 public product currentProduct;
@@ -48,16 +48,9 @@ public class MyApp {
 	
 	 
 	 public MyApp() {
-		MyApp.users=new ArrayList<User>();
-		MyApp.recipes=new ArrayList<Recipe>();
 		this.currentUser=new User();
-		MyApp.sellers=new ArrayList<orders>();
-		MyApp.products=new ArrayList<product>();
 		this.currentProduct=new product();
 		this.currentOrder=new orders();
-		MyApp.allMassages=new ArrayList<Massage>();
-		MyApp.feedBacks=new ArrayList<FeedBack>();
-		MyApp.materials=new ArrayList<RawMaterial>();
 		applyDiscount=false;
 		buyProductCase=0;
 
