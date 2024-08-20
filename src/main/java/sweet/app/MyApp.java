@@ -7,13 +7,13 @@ import java.util.stream.Collectors;
 public class MyApp {
 
 	 private static final Logger logger = Logger.getLogger(MyApp.class.getName());
-	 static public ArrayList<User> users;
-	 static public ArrayList<Recipe> recipes;
-	 static public ArrayList<orders> sellers;
-	 static public ArrayList<product> products;
-	 static public ArrayList<Massage> allMassages;
-	 static public ArrayList<FeedBack> feedBacks;
-	 static public ArrayList<RawMaterial> materials;
+	  static public ArrayList<User> users = new ArrayList<User>();
+	 static public ArrayList<Recipe> recipes = new ArrayList<Recipe>();
+	 static public ArrayList<orders> sellers = new ArrayList<orders>();
+	 static public ArrayList<product> products = new ArrayList<product>();
+	 static public ArrayList<Massage> allMassages = new ArrayList<Massage>();
+	 static public ArrayList<FeedBack> feedBacks = new ArrayList<FeedBack>();
+	 static public ArrayList<RawMaterial> materials = new ArrayList<RawMaterial>();
 	 public User currentUser;
 	 public Recipe currentRecipe;
 	 public product currentProduct;
@@ -48,15 +48,6 @@ public class MyApp {
 	
 	  public MyApp() {
 
-		   users=new ArrayList<User>();
-		recipes=new ArrayList<Recipe>();
-		sellers=new ArrayList<orders>();
-		products=new ArrayList<product>();
-		allMassages=new ArrayList<Massage>();
-		feedBacks=new ArrayList<FeedBack>();
-		materials=new ArrayList<RawMaterial>();
-		 
-		
 		this.currentUser=new User();
 		this.currentProduct=new product();
 		this.currentOrder=new orders();
