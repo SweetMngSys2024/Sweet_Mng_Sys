@@ -13,15 +13,23 @@ public class FeedBack {
 	}
 
 	@Override
-	public String toString() {return "FeedBack [uNameSrc=" + uNameSrc + ", mgs=" + mgs + ", productRecipeName=" + productRecipeName+ ", type=" + type + "]";}
+	public String toString() 
+	{
+		return "FeedBack [uNameSrc=" + uNameSrc + ", mgs=" + mgs + ", productRecipeName=" + productRecipeName+ ", type=" + type + "]";
+	}
 
 	public String getType() {
 		return type;
 	}
 
-	public void setType(String type) {this.type = type;}  public String getuNameSrc() {return uNameSrc;}
+	public void setType(String type) {this.type = type;}  
+	public String getuNameSrc() {return uNameSrc;}
 
-	public void setuNameSrc(String uNameSrc) {this.uNameSrc = uNameSrc;}  public String getMgs() {return mgs;}
+	public void setuNameSrc(String uNameSrc)
+	{
+		this.uNameSrc = uNameSrc;
+	}
+	public String getMgs() {return mgs;}
 
 	public void setMgs(String mgs) {
 		this.mgs = mgs;
@@ -35,7 +43,8 @@ public class FeedBack {
 		this.productRecipeName = productRecipeName;
 	}
 
-	public FeedBack(String uNameSrc, String mgs, String productRecipeName) {this.uNameSrc = uNameSrc;this.mgs = mgs;this.productRecipeName = productRecipeName;}
+	public FeedBack(String uNameSrc, String mgs, String productRecipeName) 
+	{this.uNameSrc = uNameSrc;this.mgs = mgs;this.productRecipeName = productRecipeName;}
 	
 	public  boolean checkType(String type) {
 	   return type.equalsIgnoreCase("Recipe")||type.equalsIgnoreCase("Product");
