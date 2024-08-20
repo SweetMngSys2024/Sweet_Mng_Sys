@@ -1,11 +1,12 @@
 package sweet.app;
-
+import java.util.logging.Logger;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class MyApp {
 
+	 private static final Logger logger = Logger.getLogger(MyApp.class.getName());
 	 static public ArrayList<User> users;
 	 static public ArrayList<Recipe> recipes;
 	 static public ArrayList<orders> sellers;
@@ -156,20 +157,20 @@ public class MyApp {
 
 
 	public void printStm(String msg) {	  
-		System.out.println(msg);		
+		logger.info(msg);	
 	}
 	 
 	public void addUser(User user) {
 		MyApp.users.add(user);
 	}
 	public void getInfo(User user) {
-		System.out.println("First Name="+this.currentUser.getFirstName());
-		System.out.println("Last Name="+this.currentUser.getLastName());
-		System.out.println("Password="+this.currentUser.getPassword());
-		System.out.println("User Name="+this.currentUser.getUserName());
-		System.out.println("Email="+this.currentUser.getEmail());
-		System.out.println("Role="+this.currentUser.getRole());
-		System.out.println("City="+this.currentUser.getCity());
+		printStm("First Name="+user.getFirstName());
+		printStm("Last Name="+user.getLastName());
+		printStm("Password="+user.getPassword());
+		printStm("User Name="+user.getUserName());
+		printStm("Email="+user.getEmail());
+		printStm("Role="+user.getRole());
+		printStm("City="+user.getCity());
 	}
 
 
@@ -234,12 +235,12 @@ public class MyApp {
 
 
 	public void displayRecipeInfo() {
-		System.out.println("Title: "+this.currentRecipe.getTitle());
-		System.out.println("Time: "+this.currentRecipe.getTime());
-		System.out.println("Description: "+this.currentRecipe.getDescription());
-		System.out.println("Ingrediants: "+this.currentRecipe.getIngrediants());
-		System.out.println("User Name: "+this.currentRecipe.getUserName());
-		System.out.println("Type: "+this.currentRecipe.getType());
+		printStm("Title: "+this.currentRecipe.getTitle());
+		printStm("Time: "+this.currentRecipe.getTime());
+		printStm("Description: "+this.currentRecipe.getDescription());
+		printStm("Ingrediants: "+this.currentRecipe.getIngrediants());
+		printStm("User Name: "+this.currentRecipe.getUserName());
+		printStm("Type: "+this.currentRecipe.getType());
 		
 	}
 
@@ -265,7 +266,7 @@ public class MyApp {
 			{
 				this.currentRecipe=myRecipe;
 				displayRecipeInfo();
-				System.out.println("*************************");
+				printStm("*************************");
 			}
 		}
 		
@@ -300,12 +301,12 @@ public class MyApp {
 
 
 	public void showProductInfo() {
-		System.out.println("Product name: "+currentProduct.getpName());
-		System.out.println("Product Price: "+currentProduct.getPrice());
-		System.out.println("Description: "+currentProduct.getDescription());
-		System.out.println("Discount: "+currentProduct.getDiscount());
-		System.out.println("Supplier name: "+currentProduct.getSupplier());	
-		System.out.println("Branch name: "+currentProduct.getBranchName());		
+		printStm("Product name: "+currentProduct.getpName());
+		printStm("Product Price: "+currentProduct.getPrice());
+		printStm("Description: "+currentProduct.getDescription());
+		printStm("Discount: "+currentProduct.getDiscount());
+		printStm("Supplier name: "+currentProduct.getSupplier());	
+		printStm("Branch name: "+currentProduct.getBranchName());		
 	}
 
 
@@ -373,23 +374,6 @@ public class MyApp {
     		
 
 	    }
-	    
-	   
-	 // Print the arrays
-	/*    System.out.println("User Sent Messages:");
-	  
-	    for (Massage msg : this.currentUser.userSentMsgs) {
-            System.out.println(msg);
-        }
-
-	    System.out.println("User Received Messages:");
-	    for (User user : MyApp.getUsers()) {
-	    	if(user.userRecievedMsgs!=null) 
-	        for (Massage msg : user.userRecievedMsgs) {
-	            System.out.println(msg);
-	            System.out.println(user.getUserName());
-	        }
-	    }  */  
 	  
 	}
 	
@@ -476,10 +460,10 @@ public class MyApp {
     public void ViewAllRecipes() {
     	ArrayList<Recipe> recipes = MyApp.recipes;
     	if (recipes.isEmpty()) {
-    		 System.out.println("No recipes found.");
+    		 printStm("No recipes found.");
     	}else {
     		for (Recipe recipe : recipes) {
-    			System.out.println(recipe.toString());
+    			printStm(recipe.toString());
     		}
     	}
 	}
@@ -540,11 +524,11 @@ public class MyApp {
     	 ArrayList<User> users = MyApp.getUsers();
     	    
     	    if (users.isEmpty()) {
-    	        System.out.println("No user accounts found.");
+    	       printStm("No user accounts found.");
     	        return false;
     	    } else {
     	        for (User user : users) {
-    	            System.out.println("Username: " + user.getUserName() + ", Type: " + user.getRole());
+    	            printStm("Username: " + user.getUserName() + ", Type: " + user.getRole());
     	        }
     	        return true;
     	    }
@@ -556,12 +540,12 @@ public class MyApp {
         ArrayList<RawMaterial> materials = MyApp.materials;
 
         if (materials.isEmpty()) {
-            System.out.println("No raw materials found.");
+            printStm("No raw materials found.");
             return false;
         } else {
             for (RawMaterial material : materials) {
 
-                System.out.println(material.toString());
+                printStm(material.toString());
     		}
             }
         return true;
@@ -571,11 +555,11 @@ public class MyApp {
     public boolean ViewAllFeedBack() {
     	ArrayList<FeedBack> feedBack = MyApp.feedBacks;
     	if (feedBack.isEmpty()) {
-    		 System.out.println("No feedBacks found.");
+    		 printStm("No feedBacks found.");
     		 return false;
     	}else {
     		for (FeedBack feedBacks: feedBacks) {
-    			System.out.println(feedBacks.toString());
+    			printStm(feedBacks.toString());
     		}
     	}return true;
 	}
@@ -584,7 +568,7 @@ public class MyApp {
 
 	public boolean deleteFeedBack(String username, String product) {
 		if(users.isEmpty()|| products.isEmpty()||recipes.isEmpty()||feedBacks.isEmpty()) {
-			System.out.println("No FeedBack found.");
+			printStm("No FeedBack found.");
 			return false;
 		}
 		FeedBack feedBackToRemove =null;
@@ -644,7 +628,7 @@ public class MyApp {
 		                userCount++;
 		            }
 		        }
-		        System.out.println("City: " + city + ", Number of registered users: " + userCount);
+		        printStm("City: " + city + ", Number of registered users: " + userCount);
 		    }
 
 	}
@@ -908,23 +892,6 @@ public class MyApp {
 		        }
 		    }
 		    
-	/*	    System.out.println("userRecievedMsgs");
-		    for (User user : MyApp.getUsers()) {
-		    	if(user.userRecievedMsgs!=null) 
-		        for (Massage msg : user.userRecievedMsgs) {
-		            System.out.println(msg.toString());
-		        }
-		    }   
-		    
-		    
-		    System.out.println("userSentMsgs");
-		    for (User user : MyApp.getUsers()) {
-		    	if(user.userSentMsgs!=null) 
-		        for (Massage msg : user.userSentMsgs) {
-		            System.out.println(msg.toString());
-		        }
-		    }   */
-		    
 		}
 		
 		
@@ -937,8 +904,6 @@ public class MyApp {
 			 for (User user : users) {
 			        if (user.getRole().equals(ownerRole)|| user.getRole().equals(supplierRole)){
 			        	 if(user.getUserName().equals(owner)){
-			   //		 System.out.println("the branch owner is: " + owner + " And the branch name is:  " + user.getBranch());
-
 			            return user.getBranch();
 			        }
 			    }
@@ -955,10 +920,10 @@ public class MyApp {
 			int totalSales = 0;
 			for (product prod : products) 
 				 if (prod.getBranchName().equals(branch)){
-					 System.out.println("Product name= " + prod.getpName() + " ,and the sales amount is: " + prod.getSalesCount());
+					printStm("Product name= " + prod.getpName() + " ,and the sales amount is: " + prod.getSalesCount());
 					 totalSales +=prod.getSalesCount();
 				 }
-			System.out.println("Total Sales for " + branch + " is " + totalSales);
+			printStm("Total Sales for " + branch + " is " + totalSales);
 			return totalSales;
 		}
 
@@ -968,29 +933,29 @@ public class MyApp {
 			double totalProfits = 0.0;
 	        for (orders order : MyApp.sellers)
 	        	 if (order.getBranch().equals(branch)){
-	            System.out.println("Order's product name= " + order.getProductName() + " ,and the total price= " + order.getPrice());
+	            printStm("Order's product name= " + order.getProductName() + " ,and the total price= " + order.getPrice());
 	            totalProfits += order.getPrice();
 	        }
-	        System.out.println("\n\nTotal Profit for " + branch + " is " + totalProfits);
+	        printStm("\n\nTotal Profit for " + branch + " is " + totalProfits);
 	        return totalProfits;
 		}
 
 		public boolean isProductAvailableInBranch(String owner,String productName) {
 			 if (owner == null || productName == null ) {
-			        System.out.println("Invalid input: owner, productName list is null.");
+			        printStm("Invalid input: owner, productName list is null.");
 			        return false;
 			    }
 
 			    String branch = getBranchOwner(owner);
 
 			    if (branch == null) {
-			        System.out.println("Branch not found for owner: " + owner);
+			        printStm("Branch not found for owner: " + owner);
 			        return false;
 			    }
 			
 			 for (product prod : products) {
 		            if (prod.getpName().equals(productName) && prod.getBranchName().equals(branch)) {
-		                System.out.println("Name: " + prod.getpName() +" in branch "+ branch );
+		                printStm("Name: " + prod.getpName() +" in branch "+ branch );
 
 		                return true; 
 		            }
@@ -1006,7 +971,7 @@ public class MyApp {
 	           Profits += order.getPrice();
 	        }
 	        	 }
-	        System.out.println("\n\nProfit for " + product + " in "+ productBranchName+ " is " + Profits);
+	       printStm("\n\nProfit for " + product + " in "+ productBranchName+ " is " + Profits);
 	        return Profits;
 		}
 
@@ -1016,7 +981,7 @@ public class MyApp {
 				 if (prod.getBranchName().equals(productBranchName)&&prod.getpName().equals(product)){
 					 Sales +=prod.getSalesCount();
 				 }
-			System.out.println(" Sales for " + product + " in "+ productBranchName+" is " + Sales);
+			printStm(" Sales for " + product + " in "+ productBranchName+" is " + Sales);
 			return Sales;
 		}
 
@@ -1035,16 +1000,16 @@ public class MyApp {
 		
 		
 		public void OwnerORSuppliersgetInfo(User user) {
-			System.out.println("First Name="+this.currentUser.getFirstName());
-			System.out.println("Last Name="+this.currentUser.getLastName());
-			System.out.println("Password="+this.currentUser.getPassword());
-			System.out.println("User Name="+this.currentUser.getUserName());
-			System.out.println("Email="+this.currentUser.getEmail());
-			System.out.println("Role="+this.currentUser.getRole());
-			System.out.println("City="+this.currentUser.getCity());
-			System.out.println("PhoneNumber="+this.currentUser.getPhoneNumber());
-			System.out.println("Date Of Birth="+this.currentUser.getDateOfBirth());
-			System.out.println("Nationality="+this.currentUser.getNationality());
+			printStm("First Name="+user.getFirstName());
+			printStm("Last Name="+user.getLastName());
+			printStm("Password="+user.getPassword());
+			printStm("User Name="+user.getUserName());
+			printStm("Email="+user.getEmail());
+			printStm("Role="+user.getRole());
+			printStm("City="+user.getCity());
+			printStm("PhoneNumber="+user.getPhoneNumber());
+			printStm("Date Of Birth="+user.getDateOfBirth());
+			printStm("Nationality="+user.getNationality());
 			
 		}
 
@@ -1063,15 +1028,5 @@ public class MyApp {
 			
 		}
 
-		
-		
-		
-		
-
 	 
 }
-
-
-
-
-
