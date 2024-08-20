@@ -47,14 +47,7 @@ public class MyApp {
 	
 	  public MyApp() {
 
-		 users=new ArrayList<User>();
-		recipes=new ArrayList<Recipe>();
-		sellers=new ArrayList<orders>();
-		products=new ArrayList<product>();
-		allMassages=new ArrayList<Massage>();
-		feedBacks=new ArrayList<FeedBack>();
-		materials=new ArrayList<RawMaterial>();
-		 
+		
 		this.currentUser=new User();
 		this.currentProduct=new product();
 		this.currentOrder=new orders();
