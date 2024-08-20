@@ -60,12 +60,7 @@ public class Recipe {
 	}
 
 	public String getUserName() {
-		return userName;
-	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
-	}
+		return userName; }   public void setUserName(String userName) {this.userName = userName;}
 
 	public String getIngrediants() {
 		return ingrediants;
@@ -91,12 +86,7 @@ public class Recipe {
 		else 
 		{
 			 ArrayList<User> users = MyApp.getUsers();
-		        for (User user : users) {
-		          if(user.getUserName().equals(uName)) 
-		          {
-		        	  this.setUserName(uName);
-		  			  return true;
-		          }
+		        for (User user : users) {   if(user.getUserName().equals(uName))   {  this.setUserName(uName);  return true;   }
 		        }userNameFlag=2; return false;
 			}
 	}
