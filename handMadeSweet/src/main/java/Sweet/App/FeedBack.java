@@ -1,6 +1,7 @@
 package Sweet.App;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class FeedBack {
 
@@ -84,7 +85,7 @@ private boolean isNullOrEmpty(String str) {
     return str == null || str.equals("");
 }
 
-private <T> boolean checkIfNameExists(ArrayList<T> items, String name) {
+private <T> boolean checkIfNameExists(List<T> items, String name) {
     for (T item : items) {
         if (item instanceof product && ((product) item).getpName().equals(name)) {
             return true;

@@ -261,7 +261,7 @@ public class User {
 		if(uName.equals("")) {userNameFlag=0; return false;}
 		else 
 		{
-			  ArrayList<User> users = MyApp.getUsers();
+			List<User> users = MyApp.getUsers();
 		        for (User user : users) {
 		          if(user.getUserName().equals(uName)) 
 		          {

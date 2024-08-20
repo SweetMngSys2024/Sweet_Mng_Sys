@@ -1,6 +1,7 @@
 package Sweet.App;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Recipe {
 
@@ -102,7 +103,7 @@ public class Recipe {
 		if(uName.equals("")) {userNameFlag=1;return false;}
 		else 
 		{
-			 ArrayList<User> users = MyApp.getUsers();
+			List<User> users = MyApp.getUsers();
 		        for (User user : users) {
 		          if(user.getUserName().equals(uName)) 
 		          {

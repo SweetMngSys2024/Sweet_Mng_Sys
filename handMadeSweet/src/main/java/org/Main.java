@@ -139,7 +139,7 @@ public class Main {
 		String email=null;
 		String city=null;
 		
-		ArrayList<User> users = MyApp.getUsers();
+		List<User> users = MyApp.getUsers();
 		
 		//for (User user : users) {
         	System.out.println(sweetAppSys.currentUser.getUserName()+", "+sweetAppSys.currentUser.getEmail()+", "+sweetAppSys.currentUser.getPassword()+", "+sweetAppSys.currentUser.getCity());
@@ -218,7 +218,7 @@ public class Main {
 	    sweetAppSys.addRecipe(newRecipe);
 	    System.out.println("Your Recipe added successfully!");
 	    
-	    ArrayList<Recipe> recipes = MyApp.getRecipes() ;
+	    List<Recipe> recipes = MyApp.getRecipes() ;
 	    for (Recipe recipe : recipes) {
         	System.out.println("Title: "+recipe.getTitle()+" ,User name: "+recipe.getUserName());
         }
@@ -1464,7 +1464,7 @@ private static void updateProduct(Scanner input) {
 			String email=null;
 			String city=null;
 			String phoneNumber=null;
-			ArrayList<User> users = MyApp.getUsers();
+			List<User> users = MyApp.getUsers();
 			
 		//	for (User user : users) {
 	        	System.out.println(sweetAppSys.currentUser.toString());

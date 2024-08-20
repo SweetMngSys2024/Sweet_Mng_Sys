@@ -6,13 +6,13 @@ import java.util.stream.Collectors;
 
 public class MyApp { 
 
-	 static public ArrayList<User> users = new ArrayList<>();
-	 static public ArrayList<Recipe> recipes = new ArrayList<>();
-	 static public ArrayList<orders> sellers = new ArrayList<>();
-	 static public ArrayList<product> products = new ArrayList<>();
-	 static public ArrayList<Massage> allMassages = new ArrayList<>();
-	 static public ArrayList<FeedBack> feedBacks = new ArrayList<>();
-	 static public ArrayList<RawMaterial> materials = new ArrayList<>();
+	 static public List<User> users = new ArrayList<>();
+	 static public List<Recipe> recipes = new ArrayList<>();
+	 static public List<orders> sellers = new ArrayList<>();
+	 static public List<product> products = new ArrayList<>();
+	 static public List<Massage> allMassages = new ArrayList<>();
+	 static public List<FeedBack> feedBacks = new ArrayList<>();
+	 static public List<RawMaterial> materials = new ArrayList<>();
 	 public User currentUser;
 	 public Recipe currentRecipe;
 	 public product currentProduct;
@@ -48,16 +48,16 @@ public class MyApp {
 	
 	 
 	 public MyApp() {
-		MyApp.users=new ArrayList<User>();
-		MyApp.recipes=new ArrayList<Recipe>();
+		MyApp.users=new ArrayList<>();
+		MyApp.recipes=new ArrayList<>();
 		this.currentUser=new User();
-		MyApp.sellers=new ArrayList<orders>();
-		MyApp.products=new ArrayList<product>();
+		MyApp.sellers=new ArrayList<>();
+		MyApp.products=new ArrayList<>();
 		this.currentProduct=new product();
 		this.currentOrder=new orders();
-		MyApp.allMassages=new ArrayList<Massage>();
-		MyApp.feedBacks=new ArrayList<FeedBack>();
-		MyApp.materials=new ArrayList<RawMaterial>();
+		MyApp.allMassages=new ArrayList<>();
+		MyApp.feedBacks=new ArrayList<>();
+		MyApp.materials=new ArrayList<>();
 		applyDiscount=false;
 		buyProductCase=0;
 
@@ -128,20 +128,20 @@ public class MyApp {
 		
 	}
 
-	public static ArrayList<RawMaterial> getMaterial() {
+	public static List<RawMaterial> getMaterial() {
 			return materials;
 		}
 
 
-	public static void setMaterial(ArrayList<RawMaterial> material) {
+	public static void setMaterial(List<RawMaterial> material) {
 			MyApp.materials = material;
 		}
 	 
-	public static ArrayList<User> getUsers() {
+	public static List<User> getUsers() {
 		return users;
 	}
 
-	public static void setUsers(ArrayList<User> users) {
+	public static void setUsers(List<User> users) {
 		MyApp.users = users;
 	}
 
@@ -196,7 +196,7 @@ public class MyApp {
 
 
 	public boolean authenticateUser(String username, String password, String role) {
-	    ArrayList<User> users = MyApp.getUsers();
+		List<User> users = MyApp.getUsers();
 	    for (User user : users) {
 	        if (user.getUserName().equals(username) && user.getPassword().equals(password) && user.getRole().equals(role)) {
 	        	this.currentUser=user;
@@ -207,12 +207,12 @@ public class MyApp {
 	    }
 
 
-	public static ArrayList<Recipe> getRecipes() {
+	public static List<Recipe> getRecipes() {
 		return recipes;
 	}
 
 
-	public static void setRecipes(ArrayList<Recipe> recipes) {
+	public static void setRecipes(List<Recipe> recipes) {
 		MyApp.recipes = recipes;
 	}
 
@@ -221,7 +221,7 @@ public class MyApp {
 
 		if(search.equals(""))return false;
 		else {
-			 ArrayList<Recipe> recipes = MyApp.getRecipes();
+			List<Recipe> recipes = MyApp.getRecipes();
 			    for (Recipe recipe : recipes) {
 			        if (recipe.getTitle().equals(search)) {
 			        	this.currentRecipe=recipe;
@@ -245,9 +245,7 @@ public class MyApp {
 
 
 	public boolean checkFilterOption(String choice) {
-		if(choice.equals(""))return false;
-		else if(choice.equals("1")||choice.equals("2")||choice.equals("3")||choice.equals("4")) {return true;}
-		else return false;
+		 return !choice.isEmpty() && (choice.equals("1") || choice.equals("2") || choice.equals("3") || choice.equals("4"));
 		
 	}
 
@@ -258,7 +256,7 @@ public class MyApp {
 		else if(filterOption.equals("2"))filter=filterNutFree;
 		else if(filterOption.equals("3"))filter="Gluten-Free";
 		else filter="Vegan";
-		ArrayList <Recipe> myFilterdRecipes=MyApp.getRecipes();
+		List <Recipe> myFilterdRecipes=MyApp.getRecipes();
 		for(Recipe myRecipe:myFilterdRecipes) {
 			if(myRecipe.getType().equals(filter)) 
 			{
@@ -271,16 +269,16 @@ public class MyApp {
 	}
 
 
-	public static ArrayList<orders> getSellers() {
+	public static List<orders> getSellers() {
 		return sellers;
 	}
-	public static void setSellers(ArrayList<orders> sellers) {
+	public static void setSellers(List<orders> sellers) {
 		MyApp.sellers = sellers;
 	}
-	public static ArrayList<product> getProducts() {
+	public static List<product> getProducts() {
 		return products;
 	}
-	public static void setProducts(ArrayList<product> products) {
+	public static void setProducts(List<product> products) {
 		MyApp.products = products;
 	}
 
@@ -289,7 +287,7 @@ public class MyApp {
 		
 		if(search.equals(""))return false;
 		else {
-			ArrayList<product> myProd=MyApp.getProducts();
+			List<product> myProd=MyApp.getProducts();
 			for(product currentProd:myProd) {
 				if(currentProd.getpName().equals(search)) {currentProduct=currentProd; return true;}
 			}
@@ -473,7 +471,7 @@ public class MyApp {
     
     
     public void ViewAllRecipes() {
-    	ArrayList<Recipe> recipes = MyApp.recipes;
+    	List<Recipe> recipes = MyApp.recipes;
     	if (recipes.isEmpty()) {
     		 System.out.println("No recipes found.");
     	}else {
@@ -536,7 +534,7 @@ public class MyApp {
 	 
     public boolean ViewAllUser() {
     	
-    	 ArrayList<User> users = MyApp.getUsers();
+    	List<User> users = MyApp.getUsers();
     	    
     	    if (users.isEmpty()) {
     	        System.out.println("No user accounts found.");
@@ -552,7 +550,7 @@ public class MyApp {
     
     
     public  boolean viewAllMaterial() {
-        ArrayList<RawMaterial> materials = MyApp.materials;
+    	List<RawMaterial> materials = MyApp.materials;
 
         if (materials.isEmpty()) {
             System.out.println("No raw materials found.");
@@ -568,7 +566,7 @@ public class MyApp {
     
     
     public boolean ViewAllFeedBack() {
-    	ArrayList<FeedBack> feedBack = MyApp.feedBacks;
+    	List<FeedBack> feedBack = MyApp.feedBacks;
     	if (feedBack.isEmpty()) {
     		 System.out.println("No feedBacks found.");
     		 return false;
@@ -615,7 +613,7 @@ public class MyApp {
 
 
 	 public boolean registerdUsersInAllCities() {
-		 ArrayList<User>allUsers2=findUsersInAllCities();
+		 List<User>allUsers2=findUsersInAllCities();
 		 if(allUsers2.isEmpty())return false;
 		 printStm("The number of all users:"+allUsers2.size());
 		 
@@ -626,7 +624,7 @@ public class MyApp {
 	      
 	    }
 	 
-	 private void findAllCities(ArrayList<User>allUsers2) {
+	 private void findAllCities(List<User>allUsers2) {
 		 ArrayList<String>allCities=new ArrayList<>();
 		 for (User user : allUsers2) {
 		        String city = user.getCity(); // Assuming User has a method getCity()
@@ -648,33 +646,30 @@ public class MyApp {
 
 	}
 
-	private void showUsersInfo(ArrayList<User> allUsers2) {
+	private void showUsersInfo(List<User> allUsers2) {
 		 for(User user: allUsers2) {
 				printStm("User Name : "+user.getUserName()+" ,City : "+user.getCity());
 				}
 	}
 
-	public ArrayList<User> findUsersInAllCities()
+	public List<User> findUsersInAllCities()
 	 {
-		 ArrayList<User>allUsers=new ArrayList<>();
+		List<User> usersInAllCities = new ArrayList<>();
 	        for (User user : users) {
 	            if(user.getRole().equals("User")) 
 	            {
-	            	allUsers.add(user);
+	            	usersInAllCities.add(user);
 	            	}
 	            }
 	        
-	        return allUsers;
+	        return usersInAllCities;
 	        
 	 }
 	    
 	public boolean checkValidCity(String city) {
-		if(city.equals(""))return false;
-		else {
+		
 			ArrayList<String>cities=fillTheArrayOfCities();
-			if(cities.contains(city))return true;
-			return false;
-		}
+			 return !city.equals("") && cities.contains(city);
 	}
     
 	 private ArrayList<String> fillTheArrayOfCities() {
@@ -702,9 +697,7 @@ public class MyApp {
 		        }
 		        }
 		printStm("The Number of Users For The City "+city2+" is :"+counter);
-		if(counter!=0)return true;
-		    
-		return false;
+		return counter != 0;
 	}
 
 	public boolean showAllOrders() {
@@ -845,7 +838,7 @@ public class MyApp {
 			 handleCancelledOrder(order);
 		}    
 	              
-	          return;
+	         
 	}
 
 	
