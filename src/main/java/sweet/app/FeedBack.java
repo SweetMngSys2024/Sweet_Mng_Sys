@@ -88,23 +88,21 @@ public class FeedBack {
 		        return false;
 	}
 	
-	public  boolean checkName(String name) {
+public boolean checkName(String name) {
 
-		boolean existFlag=false;
-		
-		 if(!(checkNullOrEmpty(name)&&checkNullOrEmpty(type)))return false;
+    if (!(checkNullOrEmpty(name) && checkNullOrEmpty(type))) {
+        return false;
+    }
 
-		    if (type.equalsIgnoreCase("Product")) {
-			    existFlag= checkProductName(name);
-		       }
-		    else if (type.equalsIgnoreCase("Recipe")) {
-		        existFlag= checkRecipeName(name);
-		    }
-		    else {
-		       existFlag= false;
-		    }
-	return existFlag;
-	}
+  switch (type.toLowerCase()) {
+        case "product":
+            return checkProductName(name);
+        case "recipe":
+            return checkRecipeName(name);
+        default:
+            return false;
+    }
+}
 
 	
 	
