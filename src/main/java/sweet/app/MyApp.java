@@ -134,25 +134,9 @@ public class MyApp {
 		}
 
 
-	public static void setMaterial(ArrayList<RawMaterial> material) {
-			MyApp.materials = material;
-		}
+	public static void setMaterial(ArrayList<RawMaterial> material) {MyApp.materials = material;}
 	 
-	public static ArrayList<User> getUsers() {
-		return users;
-	}
-
-	public static void setUsers(ArrayList<User> users) {
-		MyApp.users = users;
-	}
-
-	public User getCurrentUser() {
-		return currentUser;
-	}
-
-	public void setCurrentUser(User currentUser) {
-		this.currentUser = currentUser;
-	}
+	public static ArrayList<User> getUsers() {return users;} public static void setUsers(ArrayList<User> users) {MyApp.users = users;} public User getCurrentUser() { return currentUser;} public void setCurrentUser(User currentUser) {this.currentUser = currentUser;}
 
 
 	public void printStm(String msg) {	  
@@ -178,10 +162,7 @@ public class MyApp {
 	        for (User user : MyApp.users) {
 	          if(user.getUserName().equals(currentUser2.getUserName())) 
 	          {
-	              user.setEmail(currentUser2.getEmail());
-	              user.setUserName(currentUser2.getUserName());
-	              user.setPassword(currentUser2.getPassword());
-	        	  break;
+	              user.setEmail(currentUser2.getEmail()); user.setUserName(currentUser2.getUserName());   user.setPassword(currentUser2.getPassword());  break;
 	          }
 	        }
 		
@@ -207,14 +188,7 @@ public class MyApp {
 	    }
 
 
-	public static ArrayList<Recipe> getRecipes() {
-		return recipes;
-	}
-
-
-	public static void setRecipes(ArrayList<Recipe> recipes) {
-		MyApp.recipes = recipes;
-	}
+	public static ArrayList<Recipe> getRecipes() {return recipes;}  public static void setRecipes(ArrayList<Recipe> recipes) {MyApp.recipes = recipes;}
 
 
 	public boolean checkSearchField(String search) {
