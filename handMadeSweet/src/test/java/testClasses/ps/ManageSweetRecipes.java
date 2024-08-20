@@ -17,7 +17,7 @@ public class ManageSweetRecipes {
 	Recipe newRecipe;
 	String des;
 	String time;
-	String ing;
+	String ing; 
 
 	public ManageSweetRecipes(MyApp sweetApp) {
 		this.sweetApp = sweetApp;

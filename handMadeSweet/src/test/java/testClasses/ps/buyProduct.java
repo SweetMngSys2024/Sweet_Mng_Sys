@@ -15,7 +15,7 @@ public class buyProduct {
 	public buyProduct(MyApp sweetApp) {
 		super();
 		this.sweetApp = sweetApp;
-
+ 
 	}
 	
 

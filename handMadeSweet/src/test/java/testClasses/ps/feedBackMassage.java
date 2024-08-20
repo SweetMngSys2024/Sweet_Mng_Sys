@@ -16,7 +16,7 @@ public class feedBackMassage {
 	Massage currentMsg;
 
 	
-	
+	 
 
 public feedBackMassage(MyApp sweetApp) {
 		super();

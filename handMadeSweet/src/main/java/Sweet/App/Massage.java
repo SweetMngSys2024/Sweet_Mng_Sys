@@ -6,7 +6,7 @@ public class Massage {
 	private String mgs;
 	private String typeOfDest;
 	private String typeOfSrc;
-	
+	 
 	
 	public Massage() {
 	}

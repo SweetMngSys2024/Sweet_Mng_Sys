@@ -13,7 +13,7 @@ public class mngAdmin {
 
 
 	MyApp sweetApp;
-	
+	 
 
 public mngAdmin(MyApp sweetApp) {
 		this.sweetApp = sweetApp;

@@ -18,7 +18,7 @@ public class bestSelling {
 public bestSelling(MyApp sweetApp) {
 		this.sweetApp = sweetApp;
 	} 
-
+ 
  
 	@When("the Admin searches for the best-selling products in Branch {string}")
 	public void theAdminSearchesForTheBestSellingProductsIn(String branch) {

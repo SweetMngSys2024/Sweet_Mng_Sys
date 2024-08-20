@@ -13,7 +13,7 @@ public class ownerManageAccount {
 	 
 	MyApp sweetApp;
 	
-	
+	 
 	public ownerManageAccount(MyApp sweetApp) {
 		this.sweetApp = sweetApp;
 	}

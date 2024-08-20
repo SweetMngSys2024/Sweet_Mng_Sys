@@ -29,7 +29,7 @@ public void thatTheRoleOfTheUserIsAndHisUserName(String role1, String userName1)
 	    if(verifyUser==null)assertNull(verifyUser);
 	    else assertNotNull(verifyUser);
 	   
-}
+} 
 
 @Given("he can see all products in his branch befor updating")
 public void heCanSeeAllProductsInHisBranchBeforUpdating() {

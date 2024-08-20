@@ -22,7 +22,7 @@ public sendMsgFromOwner(MyApp sweetApp) {
 		this.sweetApp = sweetApp;
 		currentMsg= new Massage();
 	}
-
+ 
 
 	@When("user write {string} in the uNameDest field")
 	public void userWriteInTheUNameDestField(String uNameDest) {

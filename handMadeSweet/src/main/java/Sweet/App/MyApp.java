@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class MyApp {
+public class MyApp { 
 
 	 static public ArrayList<User> users = new ArrayList<>();
 	 static public ArrayList<Recipe> recipes = new ArrayList<>();

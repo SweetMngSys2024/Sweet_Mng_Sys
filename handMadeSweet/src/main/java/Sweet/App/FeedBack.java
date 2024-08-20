@@ -6,7 +6,7 @@ public class FeedBack {
 
 	private String uNameSrc;
 	private String mgs;
-	private String productRecipeName;
+	private String productRecipeName; 
 	private String type;
 	
 	public FeedBack() {

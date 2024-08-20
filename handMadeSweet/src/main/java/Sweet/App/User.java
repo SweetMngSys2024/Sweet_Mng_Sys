@@ -12,7 +12,7 @@ public class User {
 	private String email;
 	private int userNameFlag;
 	private int emailFlag;
-	private String role;
+	private String role; 
 	private boolean isLoggedIn;
 	private String city;//where the user live
 	private List<Massage> userSentMsgs;

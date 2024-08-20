@@ -11,7 +11,7 @@ public class filterRecipe {
 	
 	MyApp sweetApp;
 	String filterOption;
-	
+	 
 
 	public filterRecipe(MyApp sweetApp) {
 		super();

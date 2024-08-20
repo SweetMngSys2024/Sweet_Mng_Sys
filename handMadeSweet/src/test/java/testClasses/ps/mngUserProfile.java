@@ -14,7 +14,7 @@ public class mngUserProfile {
 
 	public mngUserProfile(MyApp sweetApp) {
 		this.sweetApp = sweetApp;
-	}
+	} 
 
 	@Given("that the user role is {string}")
 	public void thatTheUserRoleIs(String role) {

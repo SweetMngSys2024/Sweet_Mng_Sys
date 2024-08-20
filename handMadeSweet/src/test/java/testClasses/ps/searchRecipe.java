@@ -21,7 +21,7 @@ public void userEnterInTheSearchFiled(String search) {
    if(sweetApp.checkSearchField(search))assertTrue( sweetApp.checkSearchField(search));
    else assertFalse(sweetApp.checkSearchField(search));
 }
-
+ 
 @Then("the information of these recipe will displayed")
 public void theInformationOfTheseRecipeWillDisplayed() {
     sweetApp.displayRecipeInfo();

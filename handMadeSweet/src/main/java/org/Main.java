@@ -17,7 +17,7 @@ public class Main {
 	
 	public static void logInProcess() 
 	{
-		Scanner scanner = new Scanner(System.in);
+		Scanner scanner = new Scanner(System.in); 
 		while(true)
         {
 			String userName;

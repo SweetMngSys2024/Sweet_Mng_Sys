@@ -19,7 +19,7 @@ public profits(MyApp sweetApp) {
 		this.sweetApp = sweetApp;
 		newU=new User();
 	} 
-
+ 
 
 @When("selects the {string} option")
 public void selectsTheOption(String option) {

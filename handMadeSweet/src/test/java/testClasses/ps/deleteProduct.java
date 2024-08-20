@@ -20,7 +20,7 @@ public class deleteProduct {
 	MyApp sweetApp;
 	User verifyUser;
 	product prod;
-	
+	 
 	
 	public deleteProduct(MyApp sweetApp) {
 		this.sweetApp = sweetApp;

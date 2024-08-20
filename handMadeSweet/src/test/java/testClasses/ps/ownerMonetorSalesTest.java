@@ -20,7 +20,7 @@ public class ownerMonetorSalesTest {
 	public ownerMonetorSalesTest (MyApp sweetApp) {
 		this.sweetApp = sweetApp;
 	} 
-	
+	 
 	
 	@Given("The User role is {string}")
 	public void theUserRoleIs(String role) {

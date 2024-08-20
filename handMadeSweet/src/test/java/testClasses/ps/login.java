@@ -15,7 +15,7 @@ public class login {
 	public login(MyApp sweetApp) {
 		this.sweetApp = sweetApp;
 	}
-
+ 
 	@Given("user is not in the sweet system")
 	public void userIsNotInTheSweetSystem() {
 		   assertFalse(sweetApp.currentUser.isLoggedIn());

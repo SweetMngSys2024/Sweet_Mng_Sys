@@ -9,7 +9,7 @@ public class Recipe {
 	private String description;
 	private String userName;
 	private String ingrediants;
-	private String time;
+	private String time; 
 	
 	//هاد المتغير موجود في المين عشان اقدر استخدمو اعملت ست ؤجت  
 	private int userNameFlag=0;

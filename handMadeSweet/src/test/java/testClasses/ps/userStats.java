@@ -18,7 +18,7 @@ public userStats(MyApp sweetApp) {
 		this.sweetApp = sweetApp;
 	
 	} 
-
+ 
 
 	@Then("he can see the statistics for all registered users")
 	public void heCanSeeTheStatisticsOnRegisteredUsersByCity() {

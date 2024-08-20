@@ -21,7 +21,7 @@ public class dynamicDiscount {
 public dynamicDiscount(MyApp sweetApp) {
 		this.sweetApp = sweetApp;
 	
-	}
+	} 
 
 	@Given("that user role is {string} and the user name {string}")
 	public void thatUserRoleIsAndTheUserName(String role1, String userName1) {

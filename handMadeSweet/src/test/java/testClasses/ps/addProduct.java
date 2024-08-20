@@ -20,7 +20,7 @@ public class addProduct {
 public addProduct(MyApp sweetApp) {
 		this.sweetApp = sweetApp;
 		newProduct=new product();
-	} 
+	}  
 
 @Given("that the user role is {string} and the user name {string}")
 public void thatTheUserRoleIsAndTheUserName(String role1, String userName1) {

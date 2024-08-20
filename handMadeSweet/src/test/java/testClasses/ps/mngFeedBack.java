@@ -13,7 +13,7 @@ public class mngFeedBack {
 
 	public mngFeedBack(MyApp sweetApp) {
 		this.sweetApp = sweetApp;
-	}
+	} 
 	
 	@Then("the Admin can see all feedback")
 	public void theAdminCanSeeAllFeedback() {
