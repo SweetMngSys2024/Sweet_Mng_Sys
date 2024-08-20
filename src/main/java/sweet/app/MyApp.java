@@ -45,10 +45,8 @@ public class MyApp {
 	private String productNameLable;
 	private String totPriceString;
 	
-	
-	 
-	 public MyApp() {
-
+	  static {
+       
 		users=new ArrayList<User>();
 		recipes=new ArrayList<Recipe>();
 		sellers=new ArrayList<orders>();
@@ -56,6 +54,10 @@ public class MyApp {
 		allMassages=new ArrayList<Massage>();
 		feedBacks=new ArrayList<FeedBack>();
 		materials=new ArrayList<RawMaterial>();
+    }
+	 
+	 public MyApp() {
+
 		 
 		this.currentUser=new User();
 		this.currentProduct=new product();
