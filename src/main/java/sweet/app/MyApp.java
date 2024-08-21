@@ -8,13 +8,13 @@ import java.util.stream.Collectors;
 public class MyApp {
 	 private static final Logger logger = Logger.getLogger(MyApp.class.getName());
 	 
-	 static public ArrayList<User> users = new ArrayList<>();
-	 static public ArrayList<Recipe> recipes = new ArrayList<>();
-	 static public ArrayList<orders> sellers = new ArrayList<>();
-	 static public ArrayList<product> products = new ArrayList<>();
-	 static public ArrayList<Massage> allMassages = new ArrayList<>();
-	 static public ArrayList<FeedBack> feedBacks = new ArrayList<>();
-	 static public ArrayList<RawMaterial> materials = new ArrayList<>();
+	 public static  ArrayList<User> users = new ArrayList<>();
+	 public static  ArrayList<Recipe> recipes = new ArrayList<>();
+	 public static  ArrayList<orders> sellers = new ArrayList<>();
+	 public static  ArrayList<product> products = new ArrayList<>();
+	 public static  ArrayList<Massage> allMassages = new ArrayList<>();
+	 public static  ArrayList<FeedBack> feedBacks = new ArrayList<>();
+	 public static  ArrayList<RawMaterial> materials = new ArrayList<>();
 	 public User currentUser;
 	 public Recipe currentRecipe;
 	 public product currentProduct;
@@ -219,9 +219,8 @@ public class MyApp {
 
 
 	public boolean checkFilterOption(String choice) {
-		if(choice.equals(""))return false;
-		else if(choice.equals("1")||choice.equals("2")||choice.equals("3")||choice.equals("4")) {return true;}
-		else return false;
+		return(choice.equals("1")||choice.equals("2")||choice.equals("3")||choice.equals("4"));
+
 		
 	}
 
@@ -623,9 +622,7 @@ public class MyApp {
 		if(city.equals(""))return false;
 		else {
 			ArrayList<String>cities=fillTheArrayOfCities();
-			if(cities.contains(city))return true;
-			return false;
-		}
+			return(cities.contains(city)); }
 	}
     
 	 private ArrayList<String> fillTheArrayOfCities() {
@@ -653,9 +650,10 @@ public class MyApp {
 		        }
 		        }
 		printStm("The Number of Users For The City "+city2+" is :"+counter);
-		if(counter!=0)return true;
+		
+		return(counter!=0);
 		    
-		return false;
+
 	}
 
 	public boolean showAllOrders() {
@@ -796,7 +794,6 @@ public class MyApp {
 			 handleCancelledOrder(order);
 		}    
 	              
-	          return;
 	}
 
 	
