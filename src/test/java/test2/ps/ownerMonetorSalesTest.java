@@ -27,7 +27,7 @@ public class ownerMonetorSalesTest {
 		sweetApp.currentUser.setRole(role);
 		boolean isOwner= sweetApp.currentUser.checkRoleType(role);
 		System.out.println("Checking if user is owner: " + isOwner);
-		assertTrue(isOwner==true);
+		assertEquals(isOwner,true);
 	}
 
 	
@@ -38,7 +38,7 @@ public class ownerMonetorSalesTest {
 			sweetApp.currentUser.isLoggedIn=true;
 		}
 		System.out.println("the owner must be logged in!");
-		assertTrue (sweetApp.currentUser.isLoggedIn==true);
+		assertEquals (sweetApp.currentUser.isLoggedIn,true);
 	
 	}
 
@@ -58,8 +58,8 @@ public class ownerMonetorSalesTest {
 	    double actualProfits = sweetApp.ProfitsOfBranch(branch);
 	    int actualTotalSales = sweetApp.TotalSales(branch);
 	    
-	    assertTrue("The total sales do not match the expected value.", expectedTotalSales== actualTotalSales);
-	    assertTrue("The profits do not match the expected value.", expectedProfits==actualProfits);
+	    assertEquals("The total sales do not match the expected value.", expectedTotalSales, actualTotalSales);
+	    assertEquals("The profits do not match the expected value.", expectedProfits, actualProfits, 0.001);
 
 	}
 	
