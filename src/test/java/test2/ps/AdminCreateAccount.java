@@ -61,8 +61,8 @@ public void userEnterInRoleTypeField(String roleType) {
 }
 
 @When("user enter {string} in branch field")
-public void userEnterInBranchField(String Branch) {
-	if(newUser.checkBranch(Branch)==true)assertTrue(true);
+public void userEnterInBranchField(String branch) {
+	if(newUser.checkBranch(branch)==true)assertTrue(true);
 	else assertFalse(false);
 }
 
