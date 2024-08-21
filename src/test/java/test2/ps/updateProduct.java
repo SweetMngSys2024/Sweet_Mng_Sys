@@ -105,9 +105,7 @@ public void heEnterTheSupplierInTheSupplierField(String supplierName) {
 
 @Then("the product will be updated successfully to his branch")
 public void theProductWillBeUpdatedSuccessfullyToHisBranch() {
-    assertNotNull(newProduct);
-  //  System.out.println("ghhhiiiiiiiiiiiiiiiiiiii  "+newProduct.toString());
-  
+    assertNotNull(newProduct);  
 }
 
 
