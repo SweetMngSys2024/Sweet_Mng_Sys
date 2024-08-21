@@ -46,7 +46,7 @@ public class ownerMonetorSalesTest {
 	@When("The {string} searches for the total sales and profits in the branch it manages")
 	public void theSearchesForTheTotalSalesAndProfitsInTheBranchItManages(String owner) {
 		 branch = sweetApp.getBranchOwner(owner);
-		 assertNotSame("the branch does not exist!", "", branch);
+		 assertNotEquals("the branch does not exist!", "", branch);
 
 	}
 
@@ -87,7 +87,7 @@ public class ownerMonetorSalesTest {
 	@When("The {string} searches for the best-selling products")
 	public void theSearchesForTheBestSellingProducts(String owner) {
 		bestSellingBranchName=sweetApp.getBranchOwner(owner);
-		assertNotSame("the branch does not exist!", "", bestSellingBranchName);	
+		assertNotEquals("the branch does not exist!", "", bestSellingBranchName);
 	}
 
 	@Then("the system should should be displayed as the best-selling product  in this branch")
