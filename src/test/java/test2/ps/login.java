@@ -28,8 +28,6 @@ public class login {
 	        } 
 	        else {
 	        	if(sweetApp.authenticateUser(password, username, role))sweetApp.currentUser.isLoggedIn=true;
-	        //	sweetApp.currentUser.isLoggedIn = sweetApp.authenticateUser(password, username, role);
-	 
 	        }
 	}
 
