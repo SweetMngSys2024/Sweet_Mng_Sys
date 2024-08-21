@@ -1,6 +1,7 @@
 package test2.ps;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
@@ -46,7 +47,7 @@ public class ownerMonetorSalesTest {
 	@When("The {string} searches for the total sales and profits in the branch it manages")
 	public void theSearchesForTheTotalSalesAndProfitsInTheBranchItManages(String owner) {
 		 branch = sweetApp.getBranchOwner(owner);
-		 assertTrue("the branch dose not exisit!", branch != "");
+		 assertNotEquals("the branch dose not exisit!", "",branch);
 
 	}
 
@@ -88,7 +89,7 @@ public class ownerMonetorSalesTest {
 	@When("The {string} searches for the best-selling products")
 	public void theSearchesForTheBestSellingProducts(String owner) {
 		bestSellingBranchName=sweetApp.getBranchOwner(owner);
-		 assertTrue("the branch dose not exisit!",bestSellingBranchName != "");
+		assertNotEquals("the branch dose not exisit!","",bestSellingBranchName);
 
 		
 	}
