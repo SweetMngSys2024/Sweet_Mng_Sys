@@ -4,16 +4,16 @@ import java.util.ArrayList;
 
 public class User {
 
-	public String userName;
-	public String password;
-	public String firstName;
-	public String lastName;
-	public String email;
+	private String userName;
+	private String password;
+	private String firstName;
+	private String lastName;
+	private String email;
 	public int userNameFlag;
 	public int emailFlag;
-	public String role;
+	private String role;
 	public boolean isLoggedIn;
-	public String city;//where the user live
+	private String city;//where the user live
 	public ArrayList<Massage> userSentMsgs;
 	public ArrayList<Massage> userRecievedMsgs;
 	private String branch;
@@ -32,8 +32,8 @@ public class User {
 				this.role = role;
 				this.branch = branch;
 				this.cityOwnerSupplier = cityOwnerSupplier;
-				userSentMsgs=new ArrayList<Massage>();
-				userRecievedMsgs=new ArrayList<Massage>();
+				userSentMsgs=new ArrayList<>();
+				userRecievedMsgs=new ArrayList<>();
 				this.email = email;
 			    this.phoneNumber = phoneNumber;
 			    this.nationality = nationality;
@@ -43,16 +43,16 @@ public class User {
 
 	public User() {
 		role="User";//just for testing my code(shams's code)
-		userSentMsgs=new ArrayList<Massage>();
-		userRecievedMsgs=new ArrayList<Massage>();
+		userSentMsgs=new ArrayList<>();
+		userRecievedMsgs=new ArrayList<>();
 	}
 	   
 	public User(String username2, String password2,String role2) {
 		this.userName=username2;
 	    this.password=password2;
 		this.role=role2;
-		userSentMsgs=new ArrayList<Massage>();
-		userRecievedMsgs=new ArrayList<Massage>();
+		userSentMsgs=new ArrayList<>();
+		userRecievedMsgs=new ArrayList<>();
 	
 		}
 		
@@ -64,8 +64,8 @@ public class User {
 		this.password = password;
 		this.role = role;
 		this.city = city;
-		userSentMsgs=new ArrayList<Massage>();
-		userRecievedMsgs=new ArrayList<Massage>();
+		userSentMsgs=new ArrayList<>();
+		userRecievedMsgs=new ArrayList<>();
 	}
 
 	public String getFirstName() {
@@ -202,7 +202,7 @@ public class User {
 		          }
 		        }
 			
-		        if(flag==true) {return false;}
+		        if(flag) {return false;}
 		        else {this.setUserName(uName);
 				return true;}
 			}
@@ -236,12 +236,7 @@ public class User {
 
 	public boolean checkEmptyPassOrUname(String password,String uname) //for log in
 	{
-		if(password.equals("")) { return false;}
-		else if(uname.equals("")) { return false;}
-		else 
-		   {
-			return true;
-			}
+		return (!(password.equals("")||uname.equals("")));
 	}
 
 	public boolean checkCity(String city2) {
