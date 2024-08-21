@@ -26,7 +26,7 @@ public class mngUserProfile {
 	@When("the user is logged in")
 	public void theUserIsLoggedIn() {
     	if(sweetApp.currentUser.isLoggedIn==false) {sweetApp.currentUser.isLoggedIn=true;}
-    	assertEquals("the user must be logged in!",sweetApp.currentUser.isLoggedIn,true);
+    	assertEquals("the user must be logged in!",true,sweetApp.currentUser.isLoggedIn);
 	}
 
 	@Then("the user can see his information")
