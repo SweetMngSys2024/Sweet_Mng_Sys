@@ -2,6 +2,7 @@ package test2.ps;
 
 
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse; 
 import static org.junit.Assert.assertTrue;
 
@@ -24,7 +25,8 @@ public mngAdmin(MyApp sweetApp) {
 @Given("The user role is {string}")
 public void theAdminIsLoggedIn(String role) {
 	sweetApp.currentUser.setRole(role);
-    assertTrue("The Role must be " + role + "!", sweetApp.currentUser.getRole().equals("Admin"));
+	assertEquals("The Role must be " + role + "!", "Admin", sweetApp.currentUser.getRole());
+
 	   }
 
 
@@ -33,7 +35,8 @@ public void theUserIsLoggedIn() {
 	if(sweetApp.currentUser.isLoggedIn==false) {
 		sweetApp.currentUser.isLoggedIn=true;
 	}
-	assertTrue("the Admin must be logged in!",sweetApp.currentUser.isLoggedIn==true);
+	assertEquals("the Admin must be logged in!" , true,sweetApp.currentUser.isLoggedIn);
+
 }
 
 
