@@ -806,11 +806,7 @@ public class MyApp {
 		if(!checkStatus(status)) return false;
 		
 
-	    for (orders order : sellers) {
-	        if (order.getBranch().equalsIgnoreCase(branch)) {
-	        processOrderByStatus(order, status);
-	        }
-	    }
+	    for (orders order : sellers) { if (order.getBranch().equalsIgnoreCase(branch)) processOrderByStatus(order, status);   }
 	    return true;
 	
 	}
@@ -868,11 +864,8 @@ public class MyApp {
 	    		 this.printStm("Error: owner cannot be empty.");
 	    		 }
 			 for (User user : users) {
-			        if (user.getRole().equals(ownerRole)|| user.getRole().equals(supplierRole)){
-			        	 if(user.getUserName().equals(owner)){
-			            return user.getBranch();
-			        }
-			    }
+			        if ((user.getRole().equals(ownerRole)|| user.getRole().equals(supplierRole))&&user.getUserName().equals(owner))  return user.getBranch();
+			
 			 }
 			    this.printStm("Owner not found or has no branch.");
 			    return null;
