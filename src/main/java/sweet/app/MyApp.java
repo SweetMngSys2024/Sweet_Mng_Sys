@@ -921,24 +921,24 @@ public class MyApp {
 		    }
 
 		public double ProfitsOfProduct(String product,String productBranchName) {
-			double Profits = 0.0;
+			double profits = 0.0;
 	        for (orders order : MyApp.sellers) {
 	        	 if (order.getBranch().equals(productBranchName)&&order.getProductName().equals(product)){
-	           Profits += order.getPrice();
+	           profits += order.getPrice();
 	        }
 	        	 }
-	       printStm("\n\nProfit for " + product + " in "+ productBranchName+ " is " + Profits);
-	        return Profits;
+	       printStm("\n\nProfit for " + product + " in "+ productBranchName+ " is " + profits);
+	        return profits;
 		}
 
 		public int SalesOfProduct(String product,String productBranchName) {
-			int Sales = 0;
+			int sales = 0;
 			for (product prod : products) 
 				 if (prod.getBranchName().equals(productBranchName)&&prod.getpName().equals(product)){
-					 Sales +=prod.getSalesCount();
+					 sales +=prod.getSalesCount();
 				 }
-			printStm(" Sales for " + product + " in "+ productBranchName+" is " + Sales);
-			return Sales;
+			printStm(" Sales for " + product + " in "+ productBranchName+" is " + sales);
+			return sales;
 		}
 
 		
@@ -982,7 +982,5 @@ public class MyApp {
 		          }
 		        }
 			
-		}
-
-	 
+		} 
 }
