@@ -1,5 +1,6 @@
 package test2.ps;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
@@ -19,13 +20,13 @@ public class mngUserProfile {
 	@Given("that the user role is {string}")
 	public void thatTheUserRoleIs(String role) {
 		role="User";
-	  assertTrue("The Role must be User!",sweetApp.currentUser.getRole().equals(role));
+	  assertEquals("The Role must be User!",sweetApp.currentUser.getRole(),role);
 	   }
 
 	@When("the user is logged in")
 	public void theUserIsLoggedIn() {
     	if(sweetApp.currentUser.isLoggedIn==false) {sweetApp.currentUser.isLoggedIn=true;}
-    	assertTrue("the user must be logged in!",sweetApp.currentUser.isLoggedIn==true);
+    	assertEquals("the user must be logged in!",sweetApp.currentUser.isLoggedIn,true);
 	}
 
 	@Then("the user can see his information")
