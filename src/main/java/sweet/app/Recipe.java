@@ -5,16 +5,16 @@ import java.util.ArrayList;
 public class Recipe {
 
 
-	public String title;
-	public String description;
-	public String userName;
-	public String ingrediants;
-	public String time;
+	private String title;
+	private String description;
+	private String userName;
+	private String ingrediants;
+	private String time;
 	
 	
 	public int userNameFlag=0;
 	
-	public String type; //for filtering the recipes (Vegan ,Gluten-Free,Nut-Free,Egg-Free)
+	private String type; //for filtering the recipes (Vegan ,Gluten-Free,Nut-Free,Egg-Free)
 	
 	
 	public Recipe() {}
