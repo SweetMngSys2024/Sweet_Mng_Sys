@@ -27,7 +27,7 @@ public class ownerMonetorSalesTest {
 		sweetApp.currentUser.setRole(role);
 		boolean isOwner= sweetApp.currentUser.checkRoleType(role);
 		System.out.println("Checking if user is owner: " + isOwner);
-		assertTrue(isOwner==true);
+		assertEquals(true, isOwner);
 	}
 
 	
@@ -38,7 +38,7 @@ public class ownerMonetorSalesTest {
 			sweetApp.currentUser.isLoggedIn=true;
 		}
 		System.out.println("the owner must be logged in!");
-		assertTrue (sweetApp.currentUser.isLoggedIn==true);
+		assertEquals(true, sweetApp.currentUser.isLoggedIn);
 	
 	}
 
@@ -46,7 +46,7 @@ public class ownerMonetorSalesTest {
 	@When("The {string} searches for the total sales and profits in the branch it manages")
 	public void theSearchesForTheTotalSalesAndProfitsInTheBranchItManages(String owner) {
 		 branch = sweetApp.getBranchOwner(owner);
-		 assertTrue("the branch dose not exisit!", branch != "");
+		 assertNotSame("the branch does not exist!", "", branch);
 
 	}
 
@@ -58,9 +58,8 @@ public class ownerMonetorSalesTest {
 	    double actualProfits = sweetApp.ProfitsOfBranch(branch);
 	    int actualTotalSales = sweetApp.TotalSales(branch);
 	    
-	    assertTrue("The total sales do not match the expected value.", expectedTotalSales== actualTotalSales);
-	    assertTrue("The profits do not match the expected value.", expectedProfits==actualProfits);
-
+	   assertEquals("The total sales do not match the expected value.", expectedTotalSales, actualTotalSales);
+	   assertEquals("The profits do not match the expected value.", expectedProfits, actualProfits);
 	}
 	
 
@@ -88,9 +87,7 @@ public class ownerMonetorSalesTest {
 	@When("The {string} searches for the best-selling products")
 	public void theSearchesForTheBestSellingProducts(String owner) {
 		bestSellingBranchName=sweetApp.getBranchOwner(owner);
-		 assertTrue("the branch dose not exisit!",bestSellingBranchName != "");
-
-		
+		assertNotSame("the branch does not exist!", "", bestSellingBranchName);	
 	}
 
 	@Then("the system should should be displayed as the best-selling product  in this branch")
