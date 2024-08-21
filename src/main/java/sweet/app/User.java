@@ -261,12 +261,12 @@ public class User {
 	        }
 	    }
 	
-	 public boolean checkBranch(String Branch) {
-	        if (Branch.equals("")) {
+		 public boolean checkBranch(String branch) {
+	        if (branch.equals("")) {
 	            return false;
 	            
-	        }else if(Branch.equals("Branch 1")||Branch.equals("Branch 2")||Branch.equals("Branch 3")||Branch.equals("Branch 4")) {
-	        	this.setBranch(Branch);
+	        }else if(branch.equals("Branch 1")||branch.equals("Branch 2")||branch.equals("Branch 3")||branch.equals("Branch 4")) {
+	        	this.setBranch(branch);
 	            return true;
 	        } else {
 	            return false;
