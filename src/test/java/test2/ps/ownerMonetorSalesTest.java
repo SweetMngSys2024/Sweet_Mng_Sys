@@ -27,7 +27,7 @@ public class ownerMonetorSalesTest {
 		sweetApp.currentUser.setRole(role);
 		boolean isOwner= sweetApp.currentUser.checkRoleType(role);
 		System.out.println("Checking if user is owner: " + isOwner);
-		assertEquals(isOwner,true);
+		assertEquals(true,isOwner);
 	}
 
 	
@@ -38,7 +38,7 @@ public class ownerMonetorSalesTest {
 			sweetApp.currentUser.isLoggedIn=true;
 		}
 		System.out.println("the owner must be logged in!");
-		assertEquals (sweetApp.currentUser.isLoggedIn,true);
+		assertEquals (true,sweetApp.currentUser.isLoggedIn);
 	
 	}
 
