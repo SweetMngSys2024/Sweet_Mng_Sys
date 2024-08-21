@@ -49,13 +49,13 @@ public class MyApp {
 	
 	  public MyApp() {
 
-		  MyApp.users=new ArrayList<User>();
-		MyApp.recipes=new ArrayList<Recipe>();
-		  MyApp.sellers=new ArrayList<orders>();
-		MyApp.products=new ArrayList<product>();
-		  MyApp.allMassages=new ArrayList<Massage>();
-		MyApp.feedBacks=new ArrayList<FeedBack>();
-		MyApp.materials=new ArrayList<RawMaterial>();
+		  MyApp.users=new ArrayList<>();
+		MyApp.recipes=new ArrayList<>();
+		  MyApp.sellers=new ArrayList<>();
+		MyApp.products=new ArrayList<>();
+		  MyApp.allMassages=new ArrayList<>();
+		MyApp.feedBacks=new ArrayList<>();
+		MyApp.materials=new ArrayList<>();
 		  
 		this.currentUser=new User();
 		this.currentProduct=new product();
